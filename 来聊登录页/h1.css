@@ -1,0 +1,162 @@
+*{
+        margin:0;
+        padding:0;
+    }
+    body{
+      background: url(bg.jpg) no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size:cover;
+      -o-background-size:cover;
+    }
+    a{
+      color:#eee;
+      text-decoration: none;
+    }
+    .login{
+      margin:200px auto;
+      background-color: rgba(0,0,0,0.5);
+      height: 440px;
+      width: 480px;
+      padding-top:1px;
+      border-radius: 12px;
+    }
+    .ID{
+      height: 70px;
+      width: 440px;
+      margin: 20px;
+    }
+    .passwd{
+      height: 70px;
+      width: 440px;   
+      margin: 20px;
+
+    }
+    .verify{
+      height: 70px;
+      width: 440px;
+      margin: 20px;
+      margin-bottom:0;
+    }
+    .verify_input{
+      height: 70px;
+      width: 298px;
+      float:left;
+    }
+    .verify_num{
+      height:70px;
+      width: 140px;
+      float:right;
+    }
+    .verify_tip{
+      height: 20px;
+      width: 440px;
+      margin:0 auto;
+      margin-left:100px;
+    }
+    .Submit{
+      height: 80px;
+      width: 280px;
+      margin:0 auto;
+      margin-top:20px;
+      text-align: center;
+    }
+    .rf{
+      height: 20px;
+      width: 440px;
+      margin:0 auto;
+    }
+    .register{
+      height: 20px;
+      width: 60px;
+      margin-left:26px;
+      float:left;
+    }
+    .forget{
+      height: 20px;
+      width: 80px;
+      margin-right:10px;
+      float:right;
+    }
+    .ID input[type]{
+      height: 70px;
+      width: 440px;
+      background-color: rgba(0,0,0,0);
+      border:0;
+      border-bottom:1px solid rgba(255,255,255,0.6);
+      color:#eee;
+      font-size:18px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .ID input[type]:hover{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+    }
+    .ID input[type]:focus{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+      background-color: rgba(255,255,255,0.1);
+      outline: none;
+    }
+    .passwd input[type]{
+      height: 70px;
+      width: 440px;
+      background-color: rgba(0,0,0,0);
+      border:0;
+      border-bottom:1px solid rgba(255,255,255,0.6);
+      color:#eee;
+      font-size:18px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .passwd input[type]:hover{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+    }
+    .passwd input[type]:focus{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+      background-color: rgba(255,255,255,0.1);
+      outline: none;
+    }
+    .verify_input input[type]{
+      height: 70px;
+      width: 298px;
+      background-color: rgba(0,0,0,0);
+      border:0;
+      border-bottom:1px solid rgba(255,255,255,0.6);
+      color:#eee;
+      font-size:18px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .verify_input input[type]:hover{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+    }
+    .verify_input input[type]:focus{
+      border:0;
+      border-bottom:2px solid #7ad67a;
+      background-color: rgba(255,255,255,0.1);
+      outline: none;
+    }
+    .Submit input[type]{
+      height: 56px;
+      width: 160px;
+      border:1px solid #7ad67a;
+      border-radius: 28px;
+      background-color: rgba(0,0,0,0);
+      font-size:20px;
+      color:#7ad67a;
+      transition: background-color 0.3s;
+    }
+    .Submit input[type]:hover{
+      background-color: #7ad67a;
+      color:#eee;
+    }
+    .rf a:hover{
+      color:#7ad67a;
+    }

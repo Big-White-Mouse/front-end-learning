@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动门技术</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{/*a的padding显示左侧的半圆*/
+			display: inline-block;
+			height: 33px;
+			background: url(images/ao.png) no-repeat;
+			padding-left:15px;/*靠padding程开盒子以看到内容*/
+			color:#eee;
+			text-decoration: none; /*取消下划线*/
+			line-height: 33px;/*垂直居中*/
+		}
+		a span{/*span的padding显示右侧的半圆和文字内容*/
+			display: inline-block;
+			height: 33px;
+			background: url(images/ao.png) no-repeat right;
+			/*精灵技术*/
+			padding-right:15px;/*两个padding保持一致*/
+		}
+	</style>
+</head>
+<body>
+	<a href="#">
+		<span>首页</span>
+	</a>
+	<a href="#">
+		<span>啦啦啦</span>
+	</a>
+	<a href="#">
+		<span>滑动门技术</span>
+	</a>
+
+</body>
+</html>

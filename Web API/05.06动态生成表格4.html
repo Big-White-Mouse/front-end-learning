@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box table{
+			border-collapse:collapse;
+		}
+		table thead tr{
+			background-color: #888;
+			height: 40px;
+		}
+		table tbody{
+			text-align: center;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+
+	<!-- 表格示例 -->
+	<!-- <table>
+		<thead>
+			<tr>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>行
+				<td></td>列
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody> -->
+	</table>
+	<script src="common.js"></script>
+	<script type="text/javascript">
+
+		//模拟数据
+		var datas = [
+			{name:'zs',subject:'语文',score:90},
+			{name:'ls',subject:'数学',score:80},
+			{name:'ww',subject:'英语',score:85},
+			{name:'zl',subject:'物理',score:95},
+			{name:'xs',subject:'化学',score:60},
+			{name:'dc',subject:'生物',score:70},
+		]
+
+		//表头数据
+		var headDatas = ['姓名','科目','成绩','操作'];
+
+		//1.创建table元素
+		var table = document.createElement('table');
+		my$('box').appendChild(table);
+		table.border = '1px';
+		table.width = 400;
+
+		//2.创建表头
+		var thead = document.createElement('thead');
+		table.appendChild(thead);
+
+		var tr = document.createElement('tr');
+		thead.appendChild(tr);
+
+		for(var i=0;i<headDatas.length;i++){
+			var th = document.createElement('th');
+			tr.appendChild(th);
+			setInnerText(th,headDatas[i]);
+		}
+		//3.创建数据行
+
+		var tbody = document.createElement('tbody');
+		table.appendChild(tbody);
+
+
+		for(var i=0;i<datas.length;i++){//第i行
+			var data = datas[i];
+			tr = document.createElement('tr');
+			tbody.appendChild(tr);
+
+			for(var key in data){//第key列
+				var td = document.createElement('td');
+				tr.appendChild(td);
+				setInnerText(td,data[key]);
+
+			}
+			//生成删除行对应的列
+			td = document.createElement('td');
+			tr.appendChild(td);
+			var link = document.createElement('a');
+			td.appendChild(link);
+			link.href = 'javascript:void(0)';
+			setInnerText(link,'删除');
+			link.onclick = linkDelete;
+		}
+
+		//删除行的函数
+		function linkDelete(){
+			//removeChild 删除子元素需要获取父元素
+			//获取需要删除的行
+			var tr = this.parentNode.parentNode;
+			tbody.removeChild(tr);
+			return false;
+		}
+	</script>
+</body> 
+</html>

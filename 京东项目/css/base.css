@@ -1,0 +1,319 @@
+/*公共声明start*/
+/*版心的类名*/
+.w{ 
+	width: 1190px;/*版心是1190px*/
+	margin:0 auto;
+}
+/*浮动公共类*/
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.f10{
+	color:#f10215!important;
+}
+img{
+	display: block;
+}
+/*声明字体*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?bm36dj');
+  src:  url('../fonts/icomoon.eot?bm36dj#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bm36dj') format('truetype'),
+    url('../fonts/icomoon.woff?bm36dj') format('woff'),
+    url('../fonts/icomoon.svg?bm36dj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+ul,h1,input{
+	margin: 0;
+	padding: 0;
+}
+input,button{
+	border: 0;
+	outline:none;
+}
+/*公共声明 end*/
+/*header start*/
+header{
+	height: 80px;
+	background-color: #000;
+}
+/*header end*/
+
+body{
+	background-color: #f6f6f6;
+}
+/*quick navigation start*/
+.shortcut{
+	height: 30px;
+	line-height: 30px;
+	background-color: #e3e4e5;
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	color:#999;
+}
+.city{
+	margin-left: 200px;
+}
+.tips a{
+	border-right:1px solid #999;
+	color:#999;
+	padding-right:10px;
+}
+.shortcut a:hover{
+	color:#c81623;
+}
+.shortcut i{
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	font-display: block;
+}
+.shortcut li {
+	float:left;
+	margin-right: 10px;
+}
+.shortcut li:first-child a:first-child{
+	border: 0;
+}
+.shortcut li:last-child a{
+	border: 0;
+}
+.mobile{
+	position: relative;
+}
+.mobile img{
+	position: absolute;
+	top: 24px;
+	left: -3px;
+	border: 1px solid #000;
+	padding:3px;
+	background-color: orange;
+}
+/*quick navigation end*/
+/*middle header start*/
+.middle{
+	height: 140px;
+	position: relative;
+}
+.logo{
+	display:block;
+	width: 190px;
+	height: 171px;
+	background: rgba(0,0,0,0.5) url(../images/logo.png) no-repeat;
+	position: absolute;
+	top: -31px;
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.5); 
+}
+.form{
+	width: 550px;
+	height: 35px;
+	position: absolute;
+	top: 25px;
+	left: 320px;
+}
+.form input{
+	width: 495px;
+	height: 33px;
+	border: 0;
+	border: 1px solid #f10215;
+	padding-left: 3px;
+	float:left;
+	font-size: 14px;
+}
+.form button{
+	width: 50px;
+	height: 35px;
+	background-color: #f10215;
+	float:left;
+}
+.form button i{
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	color:#fff;
+	font-size: 18px;
+}
+.ShopCar{
+	width: 185px;
+	height: 33px;
+	line-height: 30px;
+	padding-left: 3px;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 25px;
+	right: 95px;
+	background-color: #fff;
+	text-align: center;
+}
+.ShopCar a{
+	color:#333;
+}
+.ShopCar a:hover{
+	color:#f10215;
+}
+.ShopCar i{
+	font-family: "icomoon";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	margin-right: 3px;
+	color:#f10215;
+}
+.ShopCar span{
+	width: 15px;
+	height: 15px;
+	background-color: #f10215;
+	border-radius:50%;
+	position: absolute;/*加了绝对定位的行内元素，可以不用转换，直接给宽高*/
+	top: 3px;
+	right: 20px;
+	font-size: 12px;
+	line-height: 15px; 
+	color:#fff;
+}
+.hotwords{
+	position: absolute;
+	top: 68px;
+	left: 320px;
+}
+.hotwords a{
+	color:#333;
+	font-size: 12px;
+}
+.navitems{
+	width: 770px;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+}
+.navitems li {
+	float:left;
+	margin-left: 15px;
+	height: 40px;
+}
+.navitems li a{
+	font-size: 16px;
+	font-weight: 700;
+	color: #555;
+	display: block;
+	line-height: 16px;
+	padding-right: 15px;
+	margin-top: 12px;
+	border-right: 1px solid #999;
+}
+
+/*middle header end*/
+/*footer start*/
+footer{
+	height: 500px;
+	background-color: #EAEAEA;
+	margin: 35px auto;
+
+}
+.service{
+	padding:30px 0;
+	border-bottom: 1px solid #999;
+	overflow: hidden;
+}
+.service ul li {
+	width: 297px;
+	height: 43px;
+ 	float:left;
+	position: relative;
+}
+.service li h5{
+	position: absolute;
+	top: -22px;
+	left: 55px;
+	width: 36px;
+	height: 43px;
+}
+.service li:nth-child(1) h5{
+	background:url(../images/service.png) 0 0 no-repeat;	
+}
+.service li:nth-child(2) h5{
+	background:url(../images/service.png) -38px 0 no-repeat;	
+}
+.service li:nth-child(3) h5{
+	background:url(../images/service.png) -77px 0 no-repeat;	
+}
+.service li:nth-child(4) h5{
+	background:url(../images/service.png) 0 -44px no-repeat;	
+}
+.service li p{
+	font-weight: 700;
+	margin-left: 97px;
+	line-height: 10px;
+}
+.help{
+	border-bottom: 1px solid #999;
+	height: 190px;
+	padding-top: 20px;
+}
+.h div{
+	float:left;
+	margin-right: 110px;
+}
+.help li{
+	line-height: 24px;
+	color:#666;
+	font-size: 14px;
+}
+.help li:first-child{
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 700;
+}
+.coverage{
+	margin-top: 10px;
+	width: 200px;
+	height: 150px;
+	background-color: rgba(0,0,0,0.1);
+}
+.coverage h5{
+	font-weight: 700;
+	font-size: 20px;
+	margin:6px 20px;
+}
+.coverage p{
+	font-size: 12px;
+	color:#666;
+	line-height: 18px;
+}
+.coverage a{
+	display:block ;
+	text-align: right;
+}
+.coverage a:hover{
+	color:#f10215;
+}
+.copyright{
+	padding-top: 10px;
+	color:#666;
+	text-align: center;
+}
+.copyright a{
+	color:#666;
+}
+.copyright span {
+	margin:0 10px;
+	font-size: 10px;
+	color:#888;
+}
+
+/*footer end*/

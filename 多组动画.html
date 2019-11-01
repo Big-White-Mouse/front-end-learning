@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多组动画</title>
+	<style>
+		body{
+			perspective: 500px;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			animation: go 2s;
+			margin: 100px;
+		}
+		@keyframes go {
+			0%{/*起始位置 等价于from*/
+				transform: translate3d(0,0,0);
+			}
+			25%{
+				transform: translate3d(600px,0,100px);
+			}
+			50%{
+				transform: translate3d(600px,600px,0);
+			}
+			75%{
+				transform: translate3d(0,600px,100px);	
+			}
+			100%{
+				transform: translate3d(0,0,0);		
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

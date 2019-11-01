@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var dog = {
+			name:'puppy',
+			type:'田园犬',
+			age:'2',
+			color:'yellow',
+
+			bark:function(){
+				console.log(this.name + ' wang wang wang');
+			},
+			eat: function(){
+				console.log(this.name + ' dun dun dun')
+			}
+		}
+		console.log(dog.name);
+		console.log(dog.age);
+		dog.bark();
+		dog.eat();
+
+		// 创建对象的方法
+		// new Object() 调用构造函数 会在内存中创建一个对象
+
+		// var hero = new Object(); //创建一个空对象
+
+		// hero.name = '白鼠';
+		// hero.weapon = '屁股';
+		// hero.equipment = '拳头';
+		// hero.blood = '1000';
+
+		// hero.attack = function(){
+		// 	console.log(this.name + ": biu biu biu");			
+		// }
+		// hero.run = function(){
+		// 	console.log(this.name + ": run run run");
+		// }
+
+		//创建多个对象
+		//工厂方法
+
+		function createHero(name,weapon,equipment,blood){
+			var hero = new Object();
+			hero.name = name;
+			hero.weapon = weapon;
+			hero.equipment = equipment;
+			hero.blood = blood;
+			hero.attack = function(){
+				console.log(this.name + ": 攻击");
+			}
+			hero.run = function(){
+				console.log(this.name + ": 跑");
+			}
+			return hero;
+		}
+
+		var hero1 = createHero('大白鼠','拳头','['头盔','鞋']',100);
+		var hero2 = createHero('小白鼠','jio','['帽子','鞋']',90);
+
+
+		// 自定义构造函数
+		// new Hero();
+		// 帕斯卡命名：每一个单词的第一个字母都大写
+		// 驼峰命名：除了第一个单词，后续单词的第一个字母都大写
+		function Hero(n,w,e,b){
+			this.name = n;
+			this.weapon = w;
+			this.equipment = e;
+			this.blood = b;
+
+			this.attack = function(){
+				console.log(this.name + ": 攻击");
+			}
+			this.run = function(){
+				console.log(this.name + ":  跑");
+			}
+		}
+
+		var hero1 = new Hero('大白鼠','拳头','['头盔','鞋']',100);
+		var hero2 = new Hero('小白鼠','jio','['帽子','鞋']',90);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

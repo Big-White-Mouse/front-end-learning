@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动</title>
+	<style>
+		.father{
+			width: 500px;
+			border:solid 1px #000;
+			/* 父元素添加 overflow:hidden;属性触发BFC 其可以清除浮动 auto 也可以*/
+			/*height: 200px;*/
+		}
+		.son1{
+			width:200px;
+			height: 200px;
+			background-color: pink;
+			float: left;
+		}
+		.son2{
+			width:200px;
+			height: 200px;
+			background-color: purple;
+			float: left;
+		}
+
+		.foot{
+			width: 500px;
+			height: 220px;
+			background-color: #666;
+		}
+		/*双伪元素清除浮动*/
+		.clearfix:before, .clearfix:after {
+			content: "";
+			display: table;
+		}
+		.clearfix:after{
+			clear:both;
+		}
+/*		.clearfix:after{
+			content: ".";内容随意 尽量不空
+			display: block;转换为块级元素
+			height:0;高度为0
+			visibility: hidden;隐藏盒子
+			clear:both;清除浮动
+			after伪元素清除浮动
+		}*/
+		/*.clear{
+			clear:both;清除浮动
+		}*/
+	</style>
+</head>
+<body>
+	<h1>清除浮动为了解决父级元素因为子级浮动引起的内部高度为0的问题</h1>
+	<div class="father clearfix">
+		<div class="son1"></div>
+		<div class="son2"></div>
+<!-- 		额外标签法 很少用 在浮动的盒子后面添加一个空盒子
+		<div class="clear"></div> -->
+	</div>
+	<div class="foot"></div>
+</body>
+</html>

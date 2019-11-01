@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列左窄右宽</title>
+	<style>
+		* {
+			/*清除全体内外边距*/
+			margin:0;/*外*/
+			padding:0;/*内*/
+		}
+		.top,
+		.banner,
+		.main,
+		.footer{/*并集选择器*/
+			width: 960px;
+			text-align: center;
+			margin: 0 auto;/*盒子外边距上下为0，左右auto居中对齐*/
+		}
+		.top{
+			height: 80px;
+			background-color: pink;
+		}
+		.banner{
+			height: 120px;
+			background-color: purple;
+		}
+		.main{
+			width: 940px;
+			height: 400px;
+			background-color:pink;
+			padding:10px;
+		}
+		.footer{
+			height: 100px;
+			background-color: purple;
+		}
+		.right{
+			width: 676px;
+			height: 400px;
+			background-color: yellow;
+			float:right;
+		}
+		.left{
+			width: 254px;
+			height: 400px;
+			background-color: orange;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">top</div>
+	<div class="banner">banner</div>
+	<div class="main">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<div class="footer">footer</div>
+</body>
+</html>

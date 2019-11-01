@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>	
+</head>
+<body>
+	<div id="box">
+		<div>一条广告</div>
+		<ul>
+			<li>一个列表</li>
+		</ul>
+		<span>说明性文字</span>
+	</div>
+	<script type="text/javascript">
+		//box.firstChild 获取第一个子节点
+		//box.lastChild 获取最后一个子节点
+		//box.firstElementChild 获取第一个子元素
+		//box.lastElementChild 获取最后一个子元素  
+		//均是只读
+
+
+		//兼容性处理代码
+		function getFirstElementChild(element){
+			var node,nodes = element.childNodes, i=0;
+			while(node = nodes[i++]){
+				if(node.nodeType === 1){
+					return node;
+				}
+			}
+			return null;
+		}
+		//测试兼容处理	代码
+		var ele = getFirstElementChild(box);
+		console.log(ele);
+	</script>
+</body>
+</html>

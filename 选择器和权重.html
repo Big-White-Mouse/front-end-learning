@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择器</title>
+</head>
+<style>
+	div{/*标签选择器 0，0，0，1*由于继承性，所提div中的p标签也会变色/
+		color:blue;
+	}
+	:anli{/*类选择器 0，0，1，0*/
+		color:red;
+	}
+	:first-child{/*伪类选择器0，0，1，0 权重相同则就近原则 层叠性*/
+		color:green;
+	}
+	#bai{/*id选择器*0，1，0，0*/
+		color:pink;
+	}
+	div{/*权重最大*/
+		color:orange!important;
+	}
+	
+	ul li{/*权重叠加，0.0.0.2*/
+		color:green;
+	}
+	li{/*0，0，0，1*/
+		color:red;
+	}
+	.dabai ul li{/*0,0,1,2*/
+		color:blue;
+	}
+	p{
+		color:pink;
+	}
+</style>
+<body>
+	<div>
+		<!-- 行内样式 1，0，0，0-->
+		<p id="bai" class="anli" style="color: yellow">123</p>
+	</div>
+
+	<nav class="dabai">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<p>继承的权重为0!!</p>
+		</ul>
+	</nav>
+</body>
+</html>

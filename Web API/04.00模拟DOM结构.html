@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<dir id="box" class="c">hello</dir>
+	<p id="p"></p>
+	<script type="text/javascript">
+		
+
+		var box = document.getElementById('box');
+		console.dir(box);
+		// var p = document.getElementById('p');
+		// console.dir(p);
+
+		//创建一列具有相同属性的对象，，通过构造函数
+
+		//获取对象没有的属性，获取的值时undefined
+		function Node(options){
+			// if(options.className){
+			// 	this.className = options.className;
+			// } else {
+			// 	this.className = '';
+			// }
+
+			//下面是上面的简化版
+
+			// this.className = options.className ? options.className : '';
+
+			//继续简化
+
+			this.className = options.className || '';
+			// || 布尔类型的运算符 如果有一边是true就返回true，如果两边同时为false返回false
+ 			// || 两边也可以是其他类型，，会先转换成布尔类型
+ 			// 如果第一个运算数转换成布尔类型是true，直接返回这个运算数
+ 			//如果是false，直接返回第二个运算数
+ 			this.id = options.id || '';
+ 			//节点的名称  如果是元素节点的话，是标签的名称
+ 			this.nodeName = options.nodeName || '';
+ 			//节点的类型  如果是元素节点 1 属性节点 2 文本节点 3 |数值类型
+ 			this.nodeType = options.nodeType || 1;
+ 			//记录节点的值，如果是元素节点，始终是null
+ 			this.nodeValue = options.nodeValue || null;
+ 			//记录子节点
+ 			this.children = options.children || [];
+		}
+
+		//创建html节点
+		var html = new Node({
+			nodeName:'html'
+		});
+		//创建head节点
+		var head = new Node({
+			nodeName:'head'
+		});
+		//创建body节点
+		var body = new Node({
+			nodeName:'body'
+		});
+		//设置html中的子节点
+		html.children.push(head);
+		html.children.push(body);
+
+		//创建div节点
+		var div = new Node({
+			nodeName:'div'
+		});
+		//创建p节点
+		var p = new Node({
+			nodeName:'p'
+		});
+		//设置body中的子节点
+		body.children.push(div);
+		body.children.push(p);
+
+		console.dir(html);	
+
+		// 在运行的时候，浏览器内部维护了一棵DOM树
+		// 1.深刻理解DOM
+		// 2.了解节点的相关属性 nodeName nodeType nodeValue
+		// 3.了解节点的层次结构
+		
+	</script>
+</body>
+</html>

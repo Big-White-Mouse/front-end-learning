@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="添加按钮" id="btn1">
+	<input type="button" value="替换按钮" id="btn2">
+	<input type="button" value="移动按钮" id="btn3">
+	<ul id="ul1">
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+	</ul>
+	<ul id="ul2">
+		
+	</ul>
+	<script type="text/javascript">
+		//createElement()创建元素
+		//Node.appendChild(element)将element放到Node下面
+		//insertBefore()把元素插到页面的指定位置
+		var btn1 = document.getElementById('btn1');
+		var ul1 = document.getElementById('ul1');
+		var ul2 = document.getElementById('ul2');
+		btn1.onclick = function(){
+			var li = document.createElement('li');
+			li.innerText = 'abc';
+			//把li插入到ul中第一个位置
+			ul1.insertBefore(li,ul1.children[0]);
+		}
+
+		//replaceChild()把当前元素的标签进行替换 返回被替换的节点
+		var btn2 = document.getElementById('btn2');
+		btn2.onclick = function(){
+			var div = document.createElement('div');
+			div.innerText = 'div';
+			ul1.replaceChild(div,ul1.children[2]);
+		}
+
+		//将ul1里面的子元素放到ul2下面kp 
+		var btn3 = document.getElementById('btn3');
+		btn3.onclick = function(){
+			ul2.appendChild(ul1.children[0]);
+		}
+	</script>
+</body>
+</html>

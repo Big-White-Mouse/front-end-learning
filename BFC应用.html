@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BFC应用</title>
+	<style type="text/css">
+		/*清除浮动*/
+		.father{
+			width: 300px;
+			border: 1px solid pink;
+		/*触发BFC后计算盒子高度要测量浮动的盒子 共有4种方式*/
+			overflow: hidden;
+		}
+		.son1,.son2{
+			width: 100px;
+			height: 100px;
+			background-color: hotpink;
+			float:left;
+		}
+		.son2{
+			background-color: deeppink;
+		}
+		.dad{
+			width: 300px;
+			height: 350px;
+			border: 1px solid #000;
+			margin-top: 50px;
+		}
+		/*同属于一个BFC的盒子会相互重叠，不属于就不会重叠的*/
+		.s1{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			margin-bottom: 100px;
+		}
+		.over{/*加一个盒子把他俩隔开*/
+			overflow: hidden;
+		}
+		.s2{
+			width: 100px;
+			height: 100px;
+			background-color: hotpink;
+			margin-top: 50px
+		}
+		/*解决外边距合并*/
+		.a{
+			width: 400px;height: 500px;
+			border: 1px solid #000;
+			margin: 10px;
+		}
+		.a1{
+			width: 160px;height: 100px;
+			background-color: rgba(0,0,0,0.5);
+			float:left;
+		}
+		.a2{
+			height: 200px;
+			background-color: green;
+			/*文字特殊，产生环绕效果*/
+			overflow: hidden;
+			/*创建BFC区域后 不和浮动产生交集 紧贴浮动边缘*/
+		}
+	</style>
+</head>
+</body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+	</div>
+	<div class="dad">
+		<div class="over">
+			<div class="s1"></div>
+		</div>
+		<div class="s2"></div>
+	</div>
+	<div class="a">
+		<div class="a1"></div>
+		<div class="a2">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+	</div>
+<body>
+</html>

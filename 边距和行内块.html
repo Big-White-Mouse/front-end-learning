@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实例1</title>
+	<style>
+		nav{
+			width: 500px;
+			height: 80px;
+			background-color: pink;
+			border-top:3px solid orange;
+			border-bottom: 1px solid gray;
+		}
+		nav a{
+			font-size: 24px;
+			color:black;
+			text-decoration: none;
+			height: 80px;
+			display:inline-block;
+			/*a为行内元素 inlineblock改为行块*/
+			line-height: 80px;
+			padding: 0 15px;
+			/*边框，上下为0 左右各为15*/
+		}
+		nav a:hover{
+			background-color: orange;
+		}
+		div{
+			width:200px;
+			height: 100px;
+			background-color: pink;
+			line-height: 100px;
+			margin:30px auto;
+			/*外边距 上下30 左右居中(只有div header等几类盒子有效)*/
+		}
+
+		/*body,nav,div{
+			padding:0;
+			margin: 0;
+			浏览器默认添加内外边距，容易产生兼容性问题所以去掉
+		}*/
+
+		/*垂直方向上会有外边距合并问题 两个相邻盒子间的距离以最大的外边距为准
+		避免即可*/
+
+		/*父子盒子会产生外边距塌陷的问题
+		解决方案：1.给父盒子一个外边框 margin
+			2.给父盒子一个内边距 padding
+			3.给父添加元素overflow:hidden*/
+
+		/*盒子总尺寸计算：
+			宽度=盒子尺寸+两个内边距（padding）+两个边框（border）（可见）
+			+两个外边距（margin）（不可见）*/
+	</style>
+</head>
+<body>
+	<nav>
+		<a href="#">首页</a>
+		<a href="#">今日新闻</a>
+		<a href="#">关注</a>
+		<a href="#">我的个人首页</a>
+	</nav>
+	<div>盒子</div>
+</body>
+</html>

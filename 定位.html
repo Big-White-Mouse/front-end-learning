@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			/*
+			top: 100px;
+			left: 100px;
+			边偏移*/
+			/*定位模式
+			position:absolute 绝对定位
+			static自动定位--静态定位暨标准流，一般用来清除定位
+			relative相对定位 
+			fixed固定定位*/
+
+
+		}
+		div:nth-child(2){/*相对定位*/
+			background-color: purple;
+			position: relative;
+			left:20px;
+			top:30px;
+		}
+		div:nth-child(4){
+			height: 120px;
+			width: 120px;
+			background-color: yellow;
+			position: absolute;/*绝对定位*/
+			top: 280px;
+			left: 80px;
+			/*绝对定位会脱离标准流 且不占有位置*/
+		}
+		div:nth-child(5){
+			height: 130px;
+			width: 130px;
+			background-color: skyblue;
+		}
+		.father{
+			height: 200px;
+			width: 200px;
+			background-color:pink;
+			margin:100px;
+		}
+		.son1{
+			height: 100px;
+			width: 100px;
+			background-color: deeppink;
+			position: absolute;
+			top: 600px;
+			left: 200px;
+			/*如果父元素没有定位子元素的绝对定位以浏览器为准*/
+		}
+		#son2{
+			height: 100px;
+			width: 100px;
+			background-color: green;
+		}
+
+		.father1{
+			height: 200px;
+			width: 200px;
+			background-color:pink;
+			margin:100px;
+			position: relative;
+			/*父元素有定位rela或abso定位*/
+		}
+		.son2{
+			height: 100px;
+			width: 100px;
+			background-color: deeppink;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			/*子元素绝对定位以父元素为准*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="father">
+		<div class="son1"></div>
+		<div id="son2"></div>
+	</div>
+	<div class="father1">
+		<div class="son2"></div>
+	</div>
+</body>
+</html>

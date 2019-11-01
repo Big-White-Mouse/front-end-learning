@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开门效果</title>
+	<style>
+		section{
+			width: 120px;
+			height: 70px;
+			border: 1px solid #fff;
+			margin:200px auto;
+			background: url(images/pho_03.jpg);
+			position: relative;
+			perspective: 2000px;
+		}
+		section:hover .door-left{
+			transform: rotateY(-140deg);
+		}
+		section:hover .door-right{
+			transform: rotateY(140deg);
+		}
+		.door-left,.door-right{
+			position: absolute;
+			top: 0;
+			height: 70px;
+			width: 59px;
+			background-color: pink;
+			transition: all 0.5s;
+		}
+		.door-left{
+			left: 0;
+			border: 1px solid #000;
+			transform-origin: left;
+		}
+		.door-right{
+			right: 0;
+			border: 1px solid #000;
+			transform-origin: right;			
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="door-left"></div>
+		<div class="door-right"></div>
+	</section>
+</body>
+</html>

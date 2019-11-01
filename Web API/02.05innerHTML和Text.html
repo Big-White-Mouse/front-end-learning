@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div id="box">
+		div
+		<span>span</span>
+	</div>
+	<script type="">
+		var box = document.getElementById('box');
+		console.dir(box);
+		// innerHTML:div <span>span</span>
+		//获取内容的时候，如果内容中有标签，会把标签也获取到 包括换行缩进全部获取
+
+		// innerText:div span
+		//获取内容的时候，过滤掉标签
+
+		// 设置标签的属性
+		//box.innerHTML = '<b>inner</b>HTML';//标签也会解析
+		 box.innerText = '<b>inner</b>HTML';//标签不会解析
+
+
+		// 处理浏览器兼容性问题
+		console.log(getInnerText(box));
+		function getInnerText(element){
+			if(typeof element.innerText === 'string'){//如果不兼容这个属性，返回Undefined
+				return element.innerText;
+			}else{
+				return element.textContent;
+			}
+		}
+	</script>
+</body>
+</html>

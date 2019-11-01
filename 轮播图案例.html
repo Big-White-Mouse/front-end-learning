@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			list-style: none;
+		}
+		.slider{
+			height: 400px;
+			width: 800px;
+			background-color: pink;
+			margin:50px auto;
+			position: relative;
+		}
+		.al,.ar{
+			position: absolute;
+			height: 30px;
+			width: 20px;
+			display: block;
+			top:185px;
+		}
+		.al{
+			left: 0;
+		}
+		.ar{
+			right: 0;
+		}
+		.circle{
+			width: 120px;
+			height: 18px;
+			background-color: rgba(0,0,0,0.4);
+			position: absolute;
+			bottom: 0;
+			left:360px;
+			border-radius: 8px;
+		}
+		.circle li{
+			width: 12px;
+			height: 12px;
+			background-color: #B7B7B7;
+			float:left;
+			margin:4px;
+			margin-top:3px;
+			border-radius: 50%;
+		}
+		.circle .current{
+			background-color: #f40;
+		}
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<img src="images/rools.png" alt="">
+		<a href="#" class="al"><img src="images/arror-l.png"></a>
+		<a href="#" class="ar"><img src="images/arror-r.png"></a>
+		<ul class="circle">
+			<li class="current"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</body>
+</html>

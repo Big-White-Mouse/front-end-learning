@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a id="link" href="http://www.baidu.com" title="我是百度">百度</a>
+	<img id="mv" src="../images/a.bmp" alt="冲">
+
+
+	<script type="text/javascript">
+		var link = document.getElementById('link');
+		var mv = document.getElementById('mv');
+
+		console.log(link.id);
+		console.log(link.herf);
+		console.log(link.title);
+
+		console.log(mv.id);
+		console.log(mv.src);//返回src相对于磁盘的绝对路径
+		console.log(mv.alt);
+
+		//动态修改属性
+		link.herf = "http://www.google.com";
+		link.title = "Google";
+
+		
+	</script>
+</body>
+</html>

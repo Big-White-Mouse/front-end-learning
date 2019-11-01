@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转</title>
+	<style>
+		.eye{
+			margin:100px;
+			transition: all 0.3s;
+			/*transform-origin:top left;*/
+			transform-origin:20px 30px;
+		}
+		.eye:hover{
+			transform: rotate(180deg);/*旋转*/
+		}
+		div{
+			height: 100px;
+			width: 100px;
+			border: 1px solid pink;
+			margin: 200px auto;
+			position: relative;
+		}
+		div img{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top:0;
+			left: 0;
+			transition: all 0.5s;
+			transform-origin: top left;
+		}
+		div:hover img:nth-child(1){
+			transform: rotate(60deg);
+		}
+		div:hover img:nth-child(2){
+			transform: rotate(120deg);
+		}
+		div:hover img:nth-child(3){
+			transform: rotate(180deg);
+		}
+
+	</style>
+</head>
+<body>
+	<img class="eye" src="images/pho_03.jpg" alt="">
+	<div>
+		<img src="images/top_img.png" alt="">
+		<img src="images/top_img.png" alt="">
+		<img src="images/top_img.png" alt="">
+	</div>
+</body>
+</html>

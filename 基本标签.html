@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>普通的标签</title>
+	<style>
+		/*以下的顺序不能变*/
+		a:link{/*未访问的链接*/
+			font-size: 28px;font-style: normal;
+			color:purple;
+
+		}
+		a:visited{/*已访问的链接*/
+			font-size: 24px;
+			color:blue;
+		}
+		a:hover{/*鼠标放到链接上*/
+			font-size: 36px;
+			color:red;	
+		}
+		a:active{/*选定的链接 正在被点击的链接*/
+			font-size: 30px;
+			color:green;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="1">一级标题:大白鼠啊</h1>
+	<h2>二级标题:2019年9月14号</h2>
+	<h3>一共6个标题</h3>
+	<hr>分割线标签
+	<p>段落标签</p>
+	<strong>加粗</strong>换行标签<br>
+	<i>斜体</i>  <em>推荐</em><br>
+	<u>下划线</u>  <ins>推荐</ins><br>
+	<s>删除线</s>  <del>推荐</del><br>
+	<div>div标签</div>
+	<span>span标签</span>
+	<hr>
+	-----------属性------------<br>
+	<hr width="50" color="red">
+	-----------图像属性------------<br>
+	<img src="q.bmp" /><br>
+	<img src="q1.bmp" alt="图片不显示时显示的文字"/><br>
+	<img src="q.bmp" title="鼠标悬停显示的文字"/><br>
+	<img src="q.bmp" width="300"> 等比缩放<br>
+	<img src="q.bmp" height="200" border="10"/>边框<br>
+	-------------链接-------------<br>
+	<p>---外部链接---</p>
+	<base target="blank">
+	<a href="http://www.baidu.com">百度</a><br>
+	<a href="http://www.163.com" target="blank">网易</a><br>
+	<a href="http://www.zhihu.com"target="self">知乎</a><br>
+	<p>---内部链接---</p>
+	<a href="fr.html">bm链接</a><br>
+	===============锚点定位===============<br>
+	<a href="#1">回顶</a>
+	++++++++++++特殊字符+++++++++++++++<br>
+	空&nbsp;&nbsp;&nbsp;&nbsp;格<br>
+	&lt;尖括号&gt;<br>
+	----------注释-------------<br>
+	你看不见，快捷键ctrl + /<br>
+	<!--注释-->
+	-----------列表-----------<br>
+	<ul>无序列表
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<ol>有序列表
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+	</ol>
+	自定义列表
+	<dl>
+		<dt>1</dt>
+		<dd>1.1</dd>
+		<dd>1.2</dd>
+		<dd>1.3</dd>
+		<dd>1.4</dd>
+	</dl>
+	-----------------------表格------------------<br>
+	<table border="1" cellspacing="0" cellpadding="30" width="500" height="100" align="center">
+	<caption>表格标题</caption>
+	<thead><!--表头提示-->	
+		<tr><!--行标签-->
+			<th>第一列</th><!--表头标签-->
+			<th>第二列</th>
+			<th>第三列</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">跨行合并的单元格</td>
+			<td>单元格标签1.2</td>
+			<td>单元格标签1.3</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">跨列合并的单元格</td>
+		</tr>
+	</tbody>
+	</table>
+	-----------------输入框----------------
+	 用户名<input type="text" value="输入你的用户名" /><br>
+	 密&nbsp;码<input type="password" maxlength="6"><br>
+	 性&nbsp;别<input type="radio" name="sex" checked="checked">男<!--默认选中--> 
+	 <input type="radio" name="sex">女<br>
+	 <!--通过相同name实现单选功能-->
+	 爱&nbsp;&nbsp;好 <input type="checkbox">足球
+	 	<input type="checkbox">篮球
+	 	<input type="checkbox">排球
+	 	<input type="checkbox">羽毛球<br>
+	 ------------------搜索按钮-----------------<br>
+	 <input type="button" value="搜索"><br><br>
+	 <input type="submit" value="提交按钮"><br><br>
+	 <input type="reset" value="重置按钮"><br><br>
+	 <input type="image" src="q.bmp"><br><br>
+	 上传文件<input type="file" multiple><!--文件域--><br><br>
+	 ---------------------文本域-------------------<br>
+	 留言板:	 <textarea>请输入留言</textarea><br><br>
+	 ----------------下拉菜单------------------<br>
+	 籍贯
+	 <select>
+	 	<option>点击选择你的籍贯</option>
+	 	<option>北京</option>
+	 	<option>上海</option>
+	 	<option>广州</option>
+	 	<option>深圳</option>
+	 </select><br>
+	 ---------------------表单域---------------<br>
+	<form action="demo.php" method="post">
+		<!--method也可以为get 速度快但是密码不保密-->
+		用户名<input type="text" name="name" id=""><br><br>
+		密码<input type="password" name="password" id=""><br><br>
+		<input type="submit" value="提交">
+		<input type="reset" value="重置"><br>
+	</form>
+	-------------------------------------------<br>
+	<input type="text" value="奥" list="ao">
+	<datalist id="ao">
+		<option>111</option>
+		<option>122</option>
+		<option>333</option>
+		<option>34</option>
+		<option>55</option>
+		<option>66</option>
+		<option>77</option>
+		<option>76</option>
+		<option>74</option>
+		<option>75</option>
+	</datalist>
+	<fieldset>
+		<legend>用户登录</legend>
+		用户名：<input type="text" name="user" placeholder="请输入用户名" autocomplete><!--提示字符+自动记忆填充--><br><br>
+		密  &nbsp; 码:<input type="password" >
+		<input type="submit" value="提交">
+	</fieldset>
+	<form action="">
+	<fieldset>
+	<legend>用户登录</legend>
+		用户名：<input type="text" name="user" placeholder="请输入用户名" autocomplete accesskey="s"><!--提示字符+自动记忆填充+获得焦点--><br>
+		昵称：<input type="text" name="ni"required>
+		<input type="submit" value="提交">
+	</fieldset>
+	<br><br>
+	-----------伪类选择器其中的链接伪类选择器-------------<br><br>
+	<a href="#">第一个链接</a>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

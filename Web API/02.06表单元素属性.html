@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<input type="button" value="禁用文本框" id='btn'>
+	<input type="button" value="修改文本框" id="tra">
+	<br>
+	<input type="text" name="" id="txt">
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+			var txt = document.getElementById('txt');
+			console.log(txt.value);
+			console.log(txt.type);
+			console.log(txt.disabled);
+			if(txt.disabled){
+				txt.disabled = false;
+				btn.value = "禁用文本框"
+			} else {
+				txt.disabled = true;
+				btn.value = "启用文本框"
+			}
+		}
+		var tra = document.getElementById('tra');
+		tra.onclick = function(){
+			var txt = document.getElementById('txt');
+			txt.value = "Hello World";
+		}
+	</script>
+</body>
+</html>

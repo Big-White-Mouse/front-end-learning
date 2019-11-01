@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		button{
+			width: 100px;
+			height: 80px;
+			cursor:pointer;
+			margin: 10px;
+		}
+		.current{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<button>按钮1</button>
+	<button>按钮2</button>
+	<button>按钮3</button>
+	<button>按钮4</button>
+	<button>按钮5</button>
+	<script type="text/javascript">
+		var btns = document.getElementsByTagName("button");
+		//鼠标放上时颜色改变
+		for(var i = 0;i < btns.length;i++){
+			var btn = btns[i];
+			btn.onmouseover = function(){
+				//先把所有的按钮class设置为空
+				for(var j = 0;j < btns.length;j++){
+					btns[j].className ="";
+				}
+				//再把鼠标经过的按钮class设置为current
+				this.className = "current";
+			}
+		}
+		//鼠标离开后颜色还原
+		for(var i = 0;i < btns.length;i++){
+			btns[i].onmouseout = function(){
+				this.className = '';
+			}
+		}
+	</script>
+</body>
+</html>

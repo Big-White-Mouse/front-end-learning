@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>补充内容</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 50px;
+			/*background:linear-gradient(渐变起始位置，起始颜色，结束颜色)*/
+			background:-ms-linear-gradient(top,red,yellow);
+			background:-webkit-linear-gradient(top,red,yellow);
+			margin: 50px;
+		}
+		section{
+			width: 500px;
+			height: 60px;
+			/*background:-ms-linear-gradient(渐变起始位置 颜色 位置 颜色 位置......);*/
+			background: -webkit-linear-gradient(left, pink 0%, hotpink 25%, deeppink 50%, purple 100%);
+			background: -ms-linear-gradient(left, pink 0%, hotpink 25%, deeppink 50%, purple 100%);
+		}
+	</style>
+</head>
+<body>
+	<h1>渐进增强和优雅降级</h1>
+	<h4>渐进增强：先针对低版本浏览器进行构建页面 保证最基本内容 再针对高级浏览器进行效果交互等改进和追加功能达到更好的用户体验</h4>
+	<h4>优雅降级：一开始就构建完整功能，再针对低版本浏览器进行兼容</h4>
+	<h4>现在一般使用优雅降级的手段进行搭建</h4>
+	<h1>浏览器前缀</h1>
+	<h5>-webkit- Google Chrome Safari Android Browser</h5>
+	<h5>-moz- Firefox</h5>
+	<h5>-o- Opera</h5>
+	<h5>-ms- IE edge</h5>
+	<h5>-khtml- Konqueror</h5>
+	<h1>背景渐变</h1>
+	<div>兼容问题很严重，必须加浏览器前缀</div>
+	<section></section>
+	<p>css3验证网址 www.cssstats.com 必须要发布到网上才能测试</p>
+	<p>W3C 统一验证工具：http://validator.w3.org/unicorn/ 支持上传本地文件
+	</p>
+	<h1>CSS压缩：http://tool.chinaz.com/Tools/CssFormat.aspx</h1>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>携程网</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			list-style:none;
+		}
+		body{
+			min-width: 320px;
+			max-width: 540px;
+			/*宽度最值*/
+			margin:0 auto;
+		}
+		header{
+			width: 100%;
+		}
+		header img{
+			width: 100%;
+		}
+		nav{
+			padding:5px;
+		}
+		nav .row{
+			
+		}
+		.row{
+			height: 90px;
+			width: 100%;
+			border-radius: 8px;
+			display: flex;
+			margin-bottom: 5px;
+		}
+		.hotel{
+			background-color: #f754a5;
+		}
+		.ticket{
+			background-color: #3d98ff;
+		}
+		.trip{
+			background-color: #44c522;
+		}
+		.play{
+			background-color: orange;
+		}
+		.row div{
+			flex:1;
+			border-left:1px solid #fff ;
+		}
+		.c1{
+			text-align: center;
+			line-height: 90px;
+			font-size: 20px;
+			color:#fff;
+		}
+		.c2{
+			display: flex;
+			flex-direction: column;/*垂直排列*/
+		}
+		.c2 a{
+			flex:1;
+			font-size:18px;
+			color:#fff;
+			text-align: center;
+			line-height:45px;
+			text-decoration: none;
+		}
+		.c2 a:first-child{
+			border-bottom: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<img src="images/star.png">
+	</header>
+	<nav>
+		<div class="hotel row">
+			<div class="c1">酒店</div>
+			<div class="c2">
+				<a href="#">海外酒店</a>
+				<a href="#">特价酒店</a>
+			</div>
+			<div class="c2">
+				<a href="#">团购</a>
+				<a href="#">民宿·客栈</a>
+			</div>
+		</div>
+
+		<div class="ticket row">
+			<div class="c1">机票</div>
+			<div class="c2">
+				<a href="#">火车票·抢票</a>
+				<a href="#">特价机票</a>
+			</div>
+			<div class="c2">
+				<a href="#">汽车票·船票</a>
+				<a href="#">专车·租车</a>
+			</div>
+		</div>
+
+		<div class="trip row">
+			<div class="c1">旅游</div>
+			<div class="c2">
+				<a href="#">目的地攻略</a>
+				<a href="#">周边游</a>
+			</div>
+			<div class="c2">
+				<a href="#">邮轮旅行</a>
+				<a href="#">定制旅行</a>
+			</div>
+		</div>
+
+		<div class="play row">
+			<div class="c2">
+				<a href="#">景点·玩乐</a>
+				<a href="#">礼品卡</a>
+			</div>
+			<div class="c2">
+				<a href="#">美食林</a>
+				<a href="#">wifi电话卡</a>
+			</div>
+			<div class="c2">
+				<a href="#">购物·外汇</a>
+				<a href="#">保险·签证</a>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>

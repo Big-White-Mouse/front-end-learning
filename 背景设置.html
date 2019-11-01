@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Background</title>
+	<style>
+		div.p{
+			height: 400px;/*快捷键：h300*/
+			width: 400px;
+			background-color: pink;
+			background-image: url(small.bmp);
+			background-repeat: no-repeat;
+		}
+		div.r{
+			height: 400px;/*快捷键：h300*/
+			width: 400px;
+			background-color: red;
+			background-image: url(small.bmp);
+			background-repeat: repeat-x;
+		}
+		div.b{
+			height: 400px;/*快捷键：h300*/
+			width: 400px;
+			background-color: blue;
+			background-image: url(small.bmp);
+			background-repeat: no-repeat;
+			background-position: right bottom;
+			/*center,left,top, 方位词无顺序*/
+		}
+		div.y{
+			height: 400px;/*快捷键：h300*/
+			width: 400px;
+			background-color: yellow;
+			background-image: url(small.bmp);
+			background-repeat: no-repeat;
+			background-position: 10px 10px;
+			/*距上，左边框的距离*/
+			/*10px center*/
+			background-size:100px;
+			/*背景图片缩放 一般只改一个值使其等比缩放
+			也可以使用百分比 如50%  
+			也可用cover（保证填充，等比）contain（保证图片完整）填充背景*/
+		}
+		body{
+			background-image: url(q.bmp);
+			background-position: center;
+			background-attachment: fixed;
+			/*背景固定；默认为scroll即跟随滚动*/
+		}
+		/*background: 背景颜色 背景图片地址 是否平铺 是否固定 位置；
+		 e.g. 
+		 background： red url(small.bmp) no-repeat fixed center 80px*/
+		div.bl{
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: top center;
+			background: rgba(0,0,0,0.5);
+			/*半透明块 最后一个数字越大越不透明*/
+		}
+		div.duo{
+			height: 400px;
+			width: 400px;
+			background:url(small.bmp) left top, url(a.bmp) right bottom pink;
+			/*多图片 先写的在上面*/
+			background-repeat: no-repeat;
+	</style>
+</head>
+<body>
+	<div class="p"></div>
+	<div class="r"></div>
+	<div class="b"></div>
+	<div class="y"></div>
+	<div class="bl"></div>
+	<div class="duo"></div>
+</body>
+</html>

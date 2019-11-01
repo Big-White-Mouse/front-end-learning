@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>justify属性</title>
+	<style>
+		section{
+			width: 1000px;
+			height: 300px;
+			margin: 100px auto;
+			border: 1px solid pink;
+			display: flex;
+			justify-content: space-between;
+			/*flex-start 让子元素从父元素开头开始排序*/
+			/*flex-end 从结尾开始排序 但是盒子顺序不变*/
+			/*center 位于父元素的中心*/
+			/*space-between 左右盒子紧贴父盒子 中间平均分布空白间距*/
+			/*space-around 相当于每个盒子添加了外边距*/
+			align-items: flex-end;/*单行*/
+			/*flex-start 上对齐*/
+			/*flex-end 底对齐*/
+			/*center 垂直居中对齐*/
+			/*stretch 随父元素高度变化 前提是子元素没给高度*/
+			flex-wrap:wrap;
+			/*灵活的元素换行*/
+			/*:nowrap;不换行显示*/
+			/*wrap-reverse 翻转*/
+
+		}
+		div{
+			width: 250px;
+			height: 100px;
+		}
+		.a1 div:nth-child(1){
+			background-color: pink;
+		}
+		.a1 div:nth-child(2){
+			background-color: hotpink;
+		}
+		.a1 div:nth-child(3){
+			background-color: deeppink;
+		}
+		.a1 div:nth-child(4){
+			background-color: purple;
+		}
+		.a1 div:nth-child(5){
+			background-color: darkblue;
+		}
+		.a2{
+			width: 1200px;
+			height: 600px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			
+			display:flex;
+			flex-flow:row wrap;/*必须是横向排列且换行*/
+			align-content:space-between;/*针对上面wrap产生的独立行/多行进行排列*/
+			/*strech默认 项目拉伸以适应容器
+			center 垂直居中
+			flex-start开头
+			flex-end结尾
+			space-between各行间有空隙
+			space-around前后左右都有空隙*/
+		}
+		.a2 div:nth-child(1){
+			background-color: pink;
+		}
+		.a2 div:nth-child(2){
+			background-color: hotpink;
+			order:1;
+		}
+		.a2 div:nth-child(3){
+			background-color: deeppink;
+		}
+		.a2 div:nth-child(4){
+			background-color: purple;
+			order:-1;/*所有的默认0 越小越靠前*/
+		}
+		.a2 div:nth-child(5){
+			background-color: darkblue;
+		}
+		.a2 div:nth-child(6){
+			background-color: purple;
+		}
+		.a2 div:nth-child(7){
+			background-color: darkblue;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="a1">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+	<header class="a2">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</header>
+</body>
+</html>

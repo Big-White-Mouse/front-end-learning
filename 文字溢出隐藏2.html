@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>溢出文字隐藏</title>
+	<style>
+		div{
+			width: 120px;
+			height: 20px;
+			border: 1px solid red;
+			word-break:break-all;/*允许单词内换行*/
+			/*word-break: keep-all;
+			默认不允许拆开单词显示，连字符可拆*/
+		}
+		.d2{
+			width: 120px;
+			height: 20px;
+			border: 1px solid red;
+			white-space: nowrap;/*强制一行内显示 除非遇到br*/
+		}
+		.d3{
+			width: 120px;
+			height: 20px;
+			border: 1px solid red;
+			/*下面三句话搭配使用*/
+			white-space: nowrap;/*一行显示*/
+			/*text-overflow: clip;裁剪*/
+			overflow: hidden;/*隐藏*/
+			text-overflow: ellipsis;/*裁剪，超出部分省略号代替*/
+		}
+	</style>
+</head>
+<body>
+	<div>
+		my name is dabaishu
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="d2">
+		啦啦啦啊啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啊啦啦啦啦
+	</div>
+	<br>
+	<br>
+	<br>
+	<div class="d3">
+		啦啦啦啊啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啊啦啦啦啦
+	</div>
+</body>
+</html>

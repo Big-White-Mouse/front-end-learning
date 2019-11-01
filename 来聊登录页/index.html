@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="http://c	dn.repository.webfont.com/wwwroot/js/wf/youziku.api.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="h1.css" />
+  <script src="js/talbe.js"></script>
+
+  <title>来聊登录页</title>
+  <script type="text/javascript">
+    //切换验证码
+    function refreshCode(){
+      //1.获取验证码图片对象
+      var vcode = document.getElementById("vcode");
+
+      //2.设置其src属性，加时间戳
+      vcode.src = "${pageContext.request.contextPath}/checkCodeServlet?time="+new Date().getTime();
+    }
+  </script>
+</head>
+
+<body>
+<div class="login">
+  <form action="${pageContext.request.contextPath}/loginServlet"  method="post">
+
+    <div class="ID">
+      <input type="text" placeholder="请输入账号" autocomplete >
+    </div>
+
+    <div class="passwd">
+      <input type="password" placeholder="请输入密码">
+    </div>
+    
+    <div class="verify">
+      <div class="verify_input">
+        <input type="text" placeholder="请输入验证码">
+      </div>
+
+      <div class="verify_num">
+        <a href="javascript:refreshCode();">
+          <image src="${pageContext.request.contextPath}/checkCodeServlet" title="点击刷新"></image>
+        </a>
+      </div>
+    </div>
+
+    <div class="verify_tip">
+      ${requestScope.back}
+    </div>
+
+    <div class="Submit">
+      <input type="submit" value="来聊吧">
+    </div>
+    
+    <div class="rf">       
+      <div class="register">
+        <a href="register.jsp">注册</a>
+      </div>
+
+      <div class="forget">
+        <a href="register.jsp">忘记密码</a>
+      </div>
+    </div>
+          
+  </form>
+</div>
+
+</body>
+
+</html>

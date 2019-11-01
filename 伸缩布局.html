@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>传统布局</title>
+	<style>
+		section{
+			width: 80%;
+			height: 200px;
+			border: 1px solid pink;
+			margin: 100px auto;
+		}
+		section div{
+			width: 33.33%;
+			height: 100px;
+			float:left;
+		}
+		section div:nth-child(1){
+			background-color:hotpink;
+		}
+		section div:nth-child(2){
+			background-color:deeppink;
+		}
+		section div:nth-child(3){
+			background-color:purple;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</section>
+</body>
+</html>

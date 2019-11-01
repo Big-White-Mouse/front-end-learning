@@ -1,0 +1,238 @@
+.grid{
+	height: 480px;
+}
+.grid-col1{
+	width: 190px;
+	height: 100%;
+	background-color: #6e6568;
+	position: relative;
+}
+.grid-col2{
+	width: 790px;
+	height: 100%;
+	margin-left: 10px;
+}
+.grid-col3{
+	width: 190px;
+	height: 100%;
+}
+.ad{
+	width: 250px;
+	height: 480px;
+	position: absolute;
+	top: 0;
+	left: -250px;
+}
+.ad-r{
+	height: 480px;
+	background: url(../images/ad-r.png);
+	position: absolute;
+	top: 0;
+	left: 250px;
+	z-index: 999;
+	width: 0;
+	transition: all 0.3s;
+}
+.ad:hover .ad-r{
+	width: 860px;
+}
+.grid-col1 ul{
+	padding: 10px 0;
+
+}
+.grid-col1 li{
+	padding-left:12px;
+	font-size: 16px;
+	color:#fff;
+	line-height:28px; 
+}
+.grid-col1 li:hover{
+	background-color: rgba(255,255,255,0.3);
+
+}
+.grid-col1 a{
+	margin: 0 3px;
+	font-size: 14px;
+	color:#fff;
+}
+.grid-col1 a:hover{
+	color:#f10215;
+}
+.grid-col2-t{
+position: relative;
+}
+.grid-col2-b{
+	padding-top: 10px;
+}
+.arrow-l,.arrow-r{
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+	background-color: rgba(0,0,0,0.2);
+	transform: translateY(-50%);
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: 700;
+	color:rgba(255,255,255,.6);
+}
+.arrow-r{
+	right:0;
+}
+.arrow-l:hover,.arrow-r:hover{
+	background-color: rgba(0,0,0,0.6);
+	color:rgba(255,255,255,0.8);
+}
+.circle{
+	width: 168px;
+	height: 20px;
+	background-color: rgba(0,0,0,0.2);
+	position: absolute;
+	left: 50%;
+	bottom: 18px;
+	transform: translateX(-50%);
+	border-radius: 12px;
+	padding-left: 8px;
+}
+.circle:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+.circle li{
+	width: 12px;
+	height: 12px;
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 50%;
+	float: left;
+	margin:4px;
+	cursor:pointer;/*鼠标经过变成小手*/
+}
+.circle li:hover{
+	background-color: rgba(255,255,255,0.9);
+}
+.circle .current{
+	background-color: #f10215;
+}
+.login{
+	width: 160px;
+	height: 85px;
+	border-bottom: 1px solid #ccc;
+	background-color:#fff;
+	padding:15px;
+	font-size: 14px;
+
+}
+.login-t{
+	width: 95px;
+	height: 60px;
+	line-height: 20px;
+	white-space: nowrap;/*强制一行显示*/
+	overflow: hidden;/*溢出隐藏*/
+	text-overflow: ellipsis;/*超出部分显示省略号*/
+	color:#666;
+	padding-left: 60px;
+	position: relative;
+}
+.login-t a{
+	color:#666;
+}
+.login-t a:hover{
+	color:#f10215;
+}
+.avatar{
+	width: 50px;
+	height: 50px;
+}
+.avatar .avab{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.avatar .ava{
+	position: absolute;
+	left: 4px;
+	top: 4px;
+	border-radius: 50%;
+}
+.login-b{
+
+}
+.login-b a{
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	border: 2px solid #f10215;
+	margin-right: 2px;
+	text-align: center;
+	color:#f10215;
+	line-height:20px;
+}
+.login-b a:hover{
+	background-color: #f10215;
+	color:#fefefe;
+}
+
+.news{
+	height: 154px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	padding:7px 13px 0;
+}
+.news-t{
+	height: 19px;																		
+	border-bottom: 1px solid #666;
+}
+.news-t a{
+	float:left;
+	height: 17px;
+	line-height: 17px;
+	color:#666;
+	font-size: 14px;
+}
+.news-t a:hover{
+	color:#f10215;
+}
+.news-t .sale{
+	display: block;
+	width: 36px;
+	height: 17px;
+	line-height: 17px;
+	padding-left: 8px;
+	border-right: 1px solid #ccc;
+}
+.news-t .note{
+	padding-left: 8px;
+}
+.news-t .more{
+	padding-right: 3px;
+	float:right;
+}
+.news-b{
+	padding-top: 20px;
+}
+.news-b a{
+	color:#666;
+	font-size: 14px;
+}
+.news-b a:hover{
+	color:#f10215;
+}
+.news-b ul li{
+	height: 23px;
+	line-height: 23px;
+}
+.expand{
+	height: 208px;
+	background-color: #fff;
+	overflow: hidden;/*隐藏超出去的边框*/
+}
+.expand ul{
+	width: 192px;
+}
+.expand li{
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	float:left;
+}

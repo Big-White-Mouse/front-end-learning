@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+	<input type="text" name=""><br>
+
+	<input id="btn" type="button" value="获取文本框的值">
+	<script type="text/javascript">
+		//1.当页面加载完毕，给所有文本框赋值
+		var inputs = document.getElementsByTagName('input');
+		for(var i=0;i < inputs.length;i++){
+			var input = inputs[i];
+			if(input.type === 'text'){
+				input.value = i;
+			}
+		}
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+			// 字符串拼接方法太占内存易出错
+			// var s = '';
+			// for(var i = 0; i < inputs.length; i++){
+			// 	var input = inputs[i];
+			// 	if(input.type === 'text'){
+			// 		s += input.value + '|';
+			// 	}
+			// }
+			// //把最后一个|去掉
+			// s = s.substr(0,s.length - 1);
+			// //打印
+			// console.log(s);
+
+			//保存在数组中 、	 
+			var  array =[];
+			for(var i = 0;i < inputs.length; i++){
+				var input = inputs[i];
+				if(input.type === 'text'){
+					array.push(input.value);
+				}
+			}
+			console.log(array.join('|'));
+		}
+		//2.当点击按钮时获取所有文本框的值，并使用|分割
+	</script>
+</body>
+</html>

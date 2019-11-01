@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>翻转效果</title>
+	<style>
+		.D{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			position: relative;
+		}
+		.D:hover div{
+			transform:rotateY(180deg);
+		}
+		.d1,.d2{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			transition: all 1s;
+		}
+		.d1{
+			background-color: pink;
+		}
+		.d2{
+			background-color: blue;
+			backface-visibility: hidden;/*不是正面面向屏幕就隐藏*/
+		}
+	</style>
+</head>
+<body>
+	<div class="D">
+		<div class="d1"></div>
+		<div class="d2"></div>
+	</div>
+</body>
+</html>

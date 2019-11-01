@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>叠放次序</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		div:first-child{
+			z-index: 1;
+			/*叠放次序谁大谁在上，无单位*/
+			/*只有相对定位绝对定位固定定位才有此属性*/
+		}
+		div:nth-child(2){
+			background-color: purple;
+			top: 30px;
+			left: 60px;
+			z-index:2;
+		}
+		div:last-child{
+			background-color: skyblue;
+			top: 60px;
+			left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

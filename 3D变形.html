@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D变形</title>
+	<style>
+		body{
+			perspective: 500px;
+			/*透视一般给父元素添加*/
+			/* 视距 */
+		}
+		img{
+			height: 60px;
+			width: 100px;
+			margin: 60px;
+			transition: all 0.5s;
+		}
+		.eye1:hover{
+			transform: rotateX(360deg);
+		}
+		.eye2{
+			transform-origin: left;
+		}
+		.eye2:hover{
+			transform: rotateY(120deg);
+		}
+		.eye3:hover{
+			transform: rotateZ(180deg);
+		}
+		.eye4:hover{
+			transform:translate3d(20px,20px,200px);
+		}
+	</style>
+</head>
+<body>
+	<img class="eye1" src="images/pho_03.jpg">
+	<img class="eye2" src="images/pho_03.jpg">
+	<img class="eye3" src="images/pho_03.jpg">
+	<img class="eye4" src="images/pho_03.jpg">
+</body>
+</html>

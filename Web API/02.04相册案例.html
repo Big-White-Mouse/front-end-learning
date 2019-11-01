@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			font-family: "Helvetica","Arial",serif;
+			color:#333;
+			background-color: #ccc;
+			margin: 1em 10%;
+		}
+		h1{
+			color:#333;
+			background-color: transparent;
+		}
+		a{
+			color: #c60;
+			background-color: transparent;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		ul {
+            padding: 0;
+        }
+        li {
+            float: left;
+            padding: 1em;
+            list-style: none;
+        }
+        #imagegallery {
+        }
+
+        #imagegallery a {
+            margin: 0px 20px 20px 0px;
+            padding: 0px;
+            display: inline;
+        }
+
+        #imagegallery a img {
+            border: 0;
+        }
+	</style>
+</head>
+<body>
+	<h2>相册</h2>
+	<div id="imagegallery">
+		<a href="../images/1.jpg" title="照片A">
+			<img src="../images/1-small.jpg" width="100px" alt="照片1">
+		</a>
+		<a href="../images/2.jpg" title="照片B">
+			<img src="../images/2-small.jpg" width="100px" alt="照片2">
+		</a>
+		<a href="../images/3.jpg" title="照片C">
+			<img src="../images/3-small.jpg" width="100px" alt="照片3">
+		</a>
+		<a href="../images/4.jpg" title="照片D">
+			<img src="../images/4-small.jpg" width="100px" alt="照片4">	
+		</a>
+	</div>
+
+	<div style="clear:both"></div>
+	<img id="image" src="../images/placeholder.png" alt="" width="450px" />
+	<p id="des">选择一个图片</p>
+	<script type="text/javascript">
+		// 1.获取所有a标签
+		var imagegallery = document.getElementById('imagegallery');
+		var links = imagegallery.getElementsByTagName('a');
+		// 遍历 links下面的所有a标签
+		for(var i = 0; i < links.length;i++){
+			// 2.给所有a标签注册事件
+			var link = links[i];
+			link.onclick = function(){
+				// 4.切换图片
+				var image = document.getElementById('image');
+				//吧image标签的src属性 设置为当前点击的a标签的herf属性
+				// this:点击谁设置谁
+				image.src = this.href;
+				// 5.获取p标签
+				var des = document.getElementById('des');
+				//6.将p标签里面的内容修改为a里的title
+				des.innerText = this.title;
+				// 3.取消a的默认行为
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>

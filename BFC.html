@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>块级格式化上下文</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			height: 100px;
+			background-color: pink;
+		}
+		nav{
+			width: 1366px;
+			height: 42px;
+			background-color: purple;
+		}
+	</style>
+</head>
+<body>
+	<!-- BFC：一块独立的封闭区域 -->
+<!-- 	块级元素 表格 等拥有BFC属性
+	这些元素有
+		float（不为none）
+		position 为 absolute或fixed
+		display 为 inline-block table-cell table-caption flex 	
+			inline-flex
+		overflow不为visible
+	就可触发BFC属性 -->
+<!-- 	BFC特性：
+		1.BFC中盒子从顶端一个接一个排列
+		2.盒子垂直方向距离由margin决定 属于同一个BFC的两个相邻盒子的margin会发生重叠
+		3.在BFC中每一个盒子的左外边缘会触碰到容器左边缘 （不压到边框），右侧一样
+		4.BFC的区域不会与浮动的盒子产生交集 而是紧贴浮动边缘
+		5.计算BFC的高度会检测浮动盒子的高度 -->
+	<header>
+		<nav></nav>
+	</header>
+</body>
+
+</html>

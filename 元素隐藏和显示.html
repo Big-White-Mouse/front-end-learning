@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>元素的显示与隐藏</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		div:first-child{
+			display:none;
+			/*隐藏元素 不占有位置*/
+			/*block显示元素*/
+		}
+		div:nth-child(2){
+			background-color: purple;
+		}
+		div:nth-child(3){
+			background-color: hotpink;
+			visibility: hidden;
+			/*隐藏元素 仍占有位置*/
+			/*visibel 显示元素*/
+		}
+		.d4{
+			position: relative;
+		}
+		span{
+			display: block;
+			height: 80px;
+			width: 80px;
+			background-color: blue;
+			position: absolute;
+			left:100px;
+			top:0;
+			visibility: hidden;
+		}
+		.d4:hover span{
+			visibility: visible;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="d4">
+		<span></span>
+	</div>
+</body>
+</html>

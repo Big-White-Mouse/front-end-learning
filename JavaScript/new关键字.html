@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Student(name,age,sex,score){
+			this.name = name;
+			this.age = age;
+			this.sex = sex;
+			this.score = score;
+
+			this,sayHi = function(){
+				console.log(this.name + ':hello');
+			}
+		}
+		var stu1 = new Student('lilei',18,'男',100);
+		var stu1 = new Student('xiaohong',17,'女',100);
+
+		// new 的执行过程
+		// 1.在内存中创建了一个空对象
+		// 2.让构造函数的this指向刚刚创建的对象
+		// 3.执行构造函数，在构造函数里设置属性和方法
+		// 4.返回了当前的对象
+
+		// for in 可以遍历对象的属性
+		for(var key in obj){
+			console.log(key + '--' + obj[key]);
+		}
+
+
+
+		var o = {};
+		for (var i = 0; i < 10; i++){
+			o['a' + i] = i * 2;
+		}
+
+		for (var key in o) {
+			console.log(key + '---' + o[key]);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

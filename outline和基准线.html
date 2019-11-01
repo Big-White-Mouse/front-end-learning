@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>杂</title>
+</head>
+<style>
+	input{
+		outline:none;
+		/*与边框设置方法一样，一般去掉*/
+	}
+	textarea{
+		resize:none;
+	}
+	div{
+		width: 200px;
+		height: 100px;
+		background-color: pink;
+		/*margin-right:auto;
+		margin-left:auto; 
+		左右自动 盒子可以居中对齐*/
+		margin:10px auto;
+		text-align:center;
+	}
+	img{
+		vertical-align: middle;/*中线对齐*/
+		/*baselne默认基线对齐*/
+	}
+	textarea{
+		height: 300px;
+		width: 300px;
+		vertical-align: middle;
+	}
+	.img{
+		height: 74px;
+		width: 125px;
+		background-color: pink;
+	}
+	img{
+		display: block;
+		/*把图片转换成块级元素 块级元素没有基线对齐*/
+		vertical-align: top;
+		/*或者顶部对齐*/
+	}
+</style>
+<body>
+	<input type="text" name="" >
+	<textarea cols="30" rows="10"></textarea>
+	<div>居中</div>
+	<hr>
+	<img src="images/pho_03.jpg">啦啦啦啊
+	<hr>
+	用户留言：<textarea></textarea>
+	<hr>
+	<div class="img"><img src="images/pho_03.jpg"></div>
+	<!-- 低版本浏览器图片（行内块元素）底部会和盒子的基线对齐，所以底部会有缝 -->
+</body>
+</html>

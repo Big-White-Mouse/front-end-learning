@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<h1>元素</h1>
+	<input type="button" name="" id="btn1"  value="点击创建元素1">
+	<input type="button" name="" id="btn2"  value="点击创建元素2">
+	<input type="button" name="" id="btn3"  value="点击生成列表">
+	<div id="box1"></div>
+	<div id="box2"></div>
+
+	<script type="text/javascript">
+
+		//动态创建元素
+
+		// 2.element.innerHTML
+		//优化1
+		var btn2 = document.getElementById('btn2');
+		btn2.onclick = function(){	
+			var box1 = document.getElementById('box1');
+			box1.innerHTML = 'hello <p>World</p>';
+		}
+		// 案例: 点击按钮生成列表，鼠标放上 高亮显示
+		//模拟数据
+		var datas = ['第一个','第二个','第三个','第四个'];
+		var btn3 = document.getElementById('btn3');
+		btn3.onclick = function(){
+			var box2 = document.getElementById('box2');
+
+			var array = [];// 使用数组代替字符串拼接
+			array.push('<ul>');
+			// var html = '<ul>'; //重新开辟内存耗费时间
+
+			//遍历数据
+			for(var i=0;i<datas.length;i++){
+				var data = datas[i];
+				array.push('<li>' + data + '</li>');
+				// html += '<li>' + data + '</li>';//字符串不可变，也需重新开辟 耗费时间
+			}
+			array.push('</ul>');
+			// html += '</ul>';
+			box2.innerHTML = array.join('');
+		}//有效率问题 每设置innerHTML浏览器都会重新绘制网页
+
+		
+
+	</script>
+</body>
+</html>

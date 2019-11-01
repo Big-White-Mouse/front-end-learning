@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位练习</title>
+	<style>
+		.shuang{
+			height: 200px;
+			width: 300px;
+			border:1px solid #000;
+			padding:10px;
+			margin:50px auto;
+			position: relative;
+		}
+		.top{
+			position:absolute;
+			top:0;
+			left: 0;
+		}
+		.zhong{
+			height: 300px;
+			width: 600px;
+			background-color: pink;
+			margin:0 auto;
+			position: relative;
+		}
+		.z1{
+			height: 80px;
+			width: 100px;
+			background-color: purple;
+			position: absolute;
+			left:250px;/*定位后margin auto失效 手动计算居中对齐*/
+			/*margin-left: -50px;*/
+			top:110px;
+		}
+	</style>
+</head>
+<body>
+	<div class="shuang">
+		<img src="images/top_img.png" alt="" class="top">
+		<img src="images/anli10_img.png" alt="">
+	</div>
+	<div class="zhong">
+		<div class="z1"></div>
+		<div></div>
+	</div>
+</body>
+</html>

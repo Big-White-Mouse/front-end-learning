@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			background-color: red;
+			width: 200px;
+			height: 200px;
+		}
+		.show{
+			display: block;
+		}
+		.hidden{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="隐藏">
+	<br>
+	<div id="box">
+		
+	</div>
+	<script type="text/javascript">
+		var isShow = true;
+		// 1.获取元素
+		var btn = document.getElementById('btn');
+
+		// 2.给按钮注册事件   为了节省内存，点击之后再添加属性
+		btn.onclick = function(){
+			var box = document.getElementById('box');
+			if(isShow){
+			// 3.控制div显示与隐藏
+			// class在JS中是关键字 所以DOM对象的对应标签的class属性名字叫做className
+			box.className = 'hidden';
+			// 4.改变按钮中的文字
+			this.value = '显示';
+			isShow= false;
+			} else {
+				box.className = 'show';
+				this.value = '隐藏';
+				isShow = true;
+			}
+		}
+		
+
+	</script>
+</body>
+</html>

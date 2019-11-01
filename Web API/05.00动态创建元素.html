@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<h1>元素</h1>
+	<input type="button" name="" id="btn1"  value="点击创建元素1">
+	<input type="button" name="" id="btn2"  value="点击创建元素2">
+	<input type="button" name="" id="btn3"  value="点击生成列表">
+	<div id="box1"></div>
+	<div id="box2"></div>
+
+	<script type="text/javascript">
+
+		//动态创建元素
+
+		// 1.document.write()
+		var btn1 = document.getElementById('btn1');
+		btn1.onclick = function(){
+			document.write('Hello <p>World</p>');	
+			//会覆盖掉之前的内容
+		}
+
+		// 2.element.innerHTML
+		var btn2 = document.getElementById('btn2');
+		btn2.onclick = function(){	
+			var box1 = document.getElementById('box1');
+			box1.innerHTML = 'hello <p>World</p>';
+		}
+		// 案例: 点击按钮生成列表，鼠标放上 高亮显示
+		//模拟数据
+		var datas = ['第一个','第二个','第三个','第四个'];
+		var btn3 = document.getElementById('btn3');
+		btn3.onclick = function(){
+			var box2 = document.getElementById('box2');
+			box2.innerHTML = '<ul>';
+				//遍历数据
+			for(var i=0;i<datas.length;i++){
+				var data = datas[i];
+				box2.innerHTML += '<li>' + data + '</li>';
+			}
+			box2.innerHTML += '</ul>';
+		}//有效率问题 每设置innerHTML浏览器都会重新绘制网页
+
+		// 3.document.createElement()
+	</script>
+</body>
+</html>

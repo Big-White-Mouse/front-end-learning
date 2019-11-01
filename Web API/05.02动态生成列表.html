@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" name="" value="按钮" id="btn">
+	<div id="box"></div>
+	<script type="text/javascript">
+		//点击按钮 动态创建列表 鼠标放上高亮显示
+		//模拟数据
+		var datas = ['数据1','数据2','数据3','数据4'];
+
+		var btn = document.getElementById('btn');
+		btn.onclick = function(){
+			// 动态创建ul
+			var ul = document.createElement('ul');
+			// 把ul放到页面的div里面 即把ul放到DOM树上 并且重新绘制 
+			var box = document.getElementById('box');
+			box.appendChild(ul);
+
+			for(var i=0;i<datas.length;i++){
+				var data = datas[i];
+				// 在内存中动态创建li
+				var li = document.createElement('li');
+				ul.appendChild(li);
+
+				// li.innerText = data;//老版火狐有兼容性问题
+				setInnerText(li,data);
+
+				//给li注册事件
+				li.onmouseover = liMouseOver;
+				li.onmouseout = liMouseOut;
+			}
+		}
+
+		//处理兼容性 设置标签间的内容
+		function setInnerText(element,content){
+			//判断当前浏览器是否支持innerText
+			if(typeof element.innerText === 'string'){
+				element.innerText = content;
+			} else {
+				element.textContent = content;
+			}
+		}
+
+		//当鼠标经过时执行
+		function liMouseOver(){
+			//高亮
+			this.style.backgroundColor = 'orange';
+		}
+		//当鼠标离开时执行
+		function liMouseOut(){
+			//取消高亮
+			this.style.backgroundColor = '';
+		}
+
+	</script>
+</body>
+</html>

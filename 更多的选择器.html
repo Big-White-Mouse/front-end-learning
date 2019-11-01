@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div,p,h2{/*并集选择器*/
+			color: #0f0;
+		}
+		div.d{/*交集选择器*/
+			font-size: 24px;
+		}
+		div,p,.a{/*混合使用*/
+			font-style:italic; 
+		}
+		/*.it li{后代选择器
+			font-weight: 300;
+		}
+		*/
+		#item > li{/*子代选择器*/
+			color: blue;
+		}
+		ul{
+			color:red;
+		}
+		h1>span {/*子代选择器*/
+			color:blue;
+		}
+		a{
+			color:yellow;
+		}
+		a[title]{/*属性选择器*/
+			color:blue;
+		}
+		input[type^="text"]{
+			/*属性选择器^=表示只要以text开头就行 $=表示在结束位置 
+				*= 表示任意位置都可以*/
+			color:red;
+		}
+		ul>li>ul>li::first-letter{
+			/*伪元素选择器 
+				first-line
+				selection 更改选中文字的属性
+			*/
+			font-size: 48px
+		}
+		div::before{
+			/*在盒子的内部前后插入
+			  after*/
+			content:"000";
+		}
+	</style>
+
+</head>
+<body>
+	<div>123</div>
+	<div>456</div>
+	<div class="d">789</div>
+	<div class="d">2468</div>
+	<p>llaaasf</p>
+	<p>dsdfsdf</p>
+	<h2>1e32de</h2>
+	<h2>343tr</h2>
+	<span class="a">yao</span>
+	<span>555</span>
+	<span>666</span>
+	<ul id="item">
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+	</ul>
+	<h1><span>111</span></h1>
+	<h1><em><span>222</span></em></h1>
+	<a href="#" title="111">1</a>
+	<a href="#" title="222">2</a>
+	<a href="#">3</a>
+	<a href="#">4</a>
+	<input type="text1" value="文本框">
+	<input type="text2" value="文本框">
+	<input type="text3" value="文本框">
+	<input type="submit">
+</body>
+</html>

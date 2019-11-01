@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#menu ul li {
+            list-style-type: none;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            background-color:beige;
+            text-align: center;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #menu ul li.current {
+            background-color: burlywood;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+        }
+	</style>
+</head>
+<body>
+	<div id="menu">
+		<ul >
+			<!-- javascript:void  用来阻止a标签跳转到其他页面 -->
+			<li class="current"><a href="javascript:void(0)">首页</a></li>
+			<li><a href="javascript:void(0)">播客</a></li>
+			<li><a href="javascript:void(0)">相册</a></li>
+			<li><a href="javascript:void(0)">关于</a></li>
+			<li><a href="javascript:void(0)">帮助</a></li>
+			<li><a href="javascript:void(0)">博客</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		// void是运算符
+		// 执行void后面的表达式并始终返回undefined
+		
+		var menu = document.getElementById('menu');
+		var ul = getFirstElementChild(menu);
+		for(var i=0;i<ul.children.length;i++){
+			var li = ul.children[i];
+			var link = getFirstElementChild(li);
+			link.onclick = linkClick;
+		}
+		function linkClick(){
+			//让所有的li取消高亮显示
+			for(var i=0;i < ul.children.length;i++){
+				var li = ul.children[i];
+				li.className = '';
+			}
+			// this是当前点击的a标签
+			//要让a所在的li高亮显示，需要找a的父元素
+			this.parentNode.className = 'current';
+			//取消后续内容执行
+			//利用js伪协议使href无作用不推荐
+			//用click绑定事件return false直接结束 不执行href
+			return false;
+		}
+		//获取覅一个子元素处理兼容性
+		function getFirstElementChild(element){
+			var node,nodes = element.childNodes, i=0;
+			while(node = nodes[i++]){
+				if(node.nodeType === 1){
+					return node;
+				}
+			}
+			return null;
+		}
+	</script>
+</body>
+</html>
