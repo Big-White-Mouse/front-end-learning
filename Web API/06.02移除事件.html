@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		var btn = my$('btn');
+
+		//第一种方法 onclick方法
+		// btn.onclick = function(){
+		// 	alert('hello world');
+		// 	//点击一次之后再点击不再alert
+		// 	btn.onclick = null;
+		// }
+
+		//第二种方法 addEventListener 方法
+		
+		//想要移除事件 注册函数的时候就不能使用匿名函数
+		// btn.addEventListener('click',btnClick);
+
+		// function btnClick(){
+		// 	alert('hello world');
+		// 	//移除事件 
+		// 	btn.removeEventListener('click',btnClick);
+		// }
+
+
+		// common.js里已经编写好了处理移除事件兼容性问题的函数
+		//测试兼容性解决代码
+		
+		//想要移除事件 注册函数的时候就不能使用匿名函数
+		function btnClick(){
+			alert('hello world');
+			//移除事件
+			removeEventListener(btn,'click',btnClick);
+		}
+		addEventListener(btn,'click',btnClick);
+
+	</script>
+</body>
+</html>

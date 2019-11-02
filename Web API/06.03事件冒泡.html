@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addEventListener第三个参数的作用</title>
+	<style type="text/css">
+		#box3{
+			width: 50px;
+			height: 50px;
+			background-color: pink;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background-color: hotpink;
+		}
+		#box1{
+			width: 150px;
+			height: 150px;
+			background-color: deeppink;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<div id="box2">
+			<div id="box3">
+				
+			</div>
+		</div>
+	</div>
+	<!-- <script src="common.js"></script> -->
+	<script type="text/javascript">
+		var box1 = document.getElementById('box1');
+		var box2 = document.getElementById('box2');
+		var box3 = document.getElementById('box3');
+		var array = [box1,box2,box3];
+
+		//当addEventListener第三个参数为false的时候：此时称为事件冒泡
+		//当addEventListener第三个参数为true的时候：此时称为事件捕获
+		for(var i=0;i<array.length;i++){
+			array[i].addEventListener('click',function(){
+				console.log(this.id);
+			},false);
+		}
+
+		document.body.addEventListener('click',function(){
+			console.log('body');
+		},false);
+
+		//box.onclick
+		//box.attachEvent 
+		//以上俩个注册事件的方式只有事件冒泡
+	</script>
+</body>
+</html>

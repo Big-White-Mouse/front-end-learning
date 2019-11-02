@@ -37,3 +37,35 @@ function setInnerText(element, content) {
     element.textContent = content;
   }
 }
+
+
+//处理注册事件的兼容性问题
+//eventName 不带on  例如 click mouseover mouseout
+function addEventListener(element,eventName,fn){
+  //判断当前浏览器是否支持addEventListener
+  if(element.addEventListener){
+    element.addEventListener(eventName,fn);
+    //第三个参数默认是false
+  } else if (element.attachEvent){
+    element.attachEvent('on'+eventName,fn);
+  } else {//一些更古老的浏览器可能两种方式都不支持
+    element['on'+eventName] = fn;
+  }
+}
+
+
+//处理移除事件的兼容性问题
+//eventName 不带on  例如 click mouseover mouseout
+function removeEventListener(element,eventName,fn){
+  //判断当前浏览器是否支持addEventListener
+  if(element.removeEventListener){
+    element.removeEventListener(eventName,fn);
+    //第三个参数默认是false
+  } else if (element.detachEvent){
+    element.detachEvent('on'+eventName,fn);
+  } else {//一些更古老的浏览器可能两种方式都不支持
+    element['on'+eventName] = null;
+  }
+}
+
+

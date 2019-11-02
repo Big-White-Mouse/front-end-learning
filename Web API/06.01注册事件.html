@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+
+	<!-- 注册事件的不同方式 -->
+
+	<!-- 第一种：btn.onclick = function -->
+	<!-- <script src="user1.js"></script>
+	<script src="user2.js"></script> -->
+	<!-- 第一次赋值被第二次赋值替换了 -->
+	<!-- 所以一个事件只能注册一个事件处理函数 -->
+
+	<script type="text/javascript">
+		//第二种方式
+		//新的注册事件,可以给一个事件注册多个事件处理函数
+		//有浏览器兼容性问题 IE9以下不支持
+		
+		var btn = document.getElementById('btn');
+		// btn.addEventListener('click',function(){
+		// 	alert('hello world');
+		// 	alert('hello earth');
+		// })
+
+
+		//第三种方法 ：IE6-IE9 支持的 attachEvent
+
+		//兼容性问题解决
+		//eventName 不带on  例如 click mouseover mouseout
+		function addEventListener(element,eventName,fn){
+			//判断当前浏览器是否支持addEventListener
+			if(element.addEventListener){
+				element.addEventListener(eventName,fn);
+				//第三个参数默认是false
+			} else if (element.attachEvent){
+				element.attachEvent('on'+eventName,fn);
+			} else {//一些更古老的浏览器可能两种方式都不支持
+				element['on'+eventName] = fn;
+			}
+		}
+
+		//测试兼容性解决代码
+		addEventListener(btn,'click',function(){
+			alert('hello world');
+		})
+		addEventListener(btn,'click',function(){
+			alert('hello earth');
+		})
+	</script>
+</body>
+</html>                                    
