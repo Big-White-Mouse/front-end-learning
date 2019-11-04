@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(45deg,rgb(181,154,254),rgb(245,189,253)) fixed;
+		}
+		.container{
+			position: relative;
+		}
+		.container img{
+			width: 70rem;
+		}
+		.panel{
+			width: 30%;
+			margin: 10rem 0 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			justify-content: center;
+		}
+		.switch span {
+			color:#ccc;
+			font-size: 1.4rem;
+			cursor: default;
+		}
+		#login,
+		#signup{
+			cursor: pointer;
+		}
+		.switch span.active{
+			color: rgb(181,154,254);
+		}
+		form{
+			width: 12rem;
+			margin: 3rem 0 0;
+		}
+		form .input{
+			width: 100%;
+			opacity:1;
+			height: 2rem;
+			margin: 2rem 0;
+			position: relative;
+			transition: .4s;
+		}
+		.input input{
+			outline: none;
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid rgb(181,154,254);
+		}
+		.input::after{
+			content:attr(placeholder);
+			/*attr用来获取选择到的元素的某一HTML属性值，并用于其样式*/
+			position: absolute;
+			top: -20%;
+			left: 0;
+			font-size: 1.3rem;
+			color:rgb(129,101,254);
+			transition: .3s;
+		}
+		.login .input#email,
+		.login .input#repeat
+		{
+			/*display:none;*/
+			/*会将元素可访问性树中移除。这会导致该元素及其子元素不再被屏幕阅读技术访问*/
+
+			margin: 0;
+			height: 0;
+			opacity: 0;/*这里使用透明度将Login里面的Email和Repeat移除*/
+		}
+		.input.focus::after{
+			top:-70%;
+			font-size: 1rem;
+		}
+		form span{
+			display: block;
+			color:rgb(110,89,167);
+			font-size: .8rem;
+			cursor: pointer;
+		}
+		form button{
+			border: none;
+			outline: none;
+			margin: 2rem 0 0;
+			width: 100%;
+			height: 3.5rem;
+			border-radius: 3rem;
+			background: linear-gradient(90deg,rgb(181,154,254),rgb(245,189,253));
+			box-shadow: 0 0 8px rgb(181,154,254);
+			cursor: pointer;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="images/bc.jpg" alt="">
+		<div class="panel">
+			<div class="content login">
+				<div class="switch">
+					<span id="login" class="active">Login</span>
+					<span>/</span>
+					<span id="signup">Sign Up</span>
+				</div>
+				<form action="">
+					<div id="email" class="input" placeholder='Email'><input type="text"></div>
+					<div class="input" placeholder='Username'><input type="text"></div>
+					<div class="input" placeholder='Password'><input type="password"></div>
+					<div id="repeat" class="input" placeholder='Repeat'><input type="password"></div>
+					<span>Forget?</span>
+					<button>LOGIN</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$('#login').click(function(){
+			$('.switch span').removeClass('active');
+			$(this).addClass('active');
+
+			$(this).parents('.content').removeClass('signup');
+			$(this).parents('.content').addClass('login');
+			
+			$('form button').text('LOGIN')
+		})
+		$('#signup').click(function(){
+			$('.switch span').removeClass('active');
+			$(this).addClass('active');
+
+			// 当点击signup移除使Email和Repeat透明的样式移除
+			$(this).parents('.content').removeClass('login');
+			$(this).parents('.content').addClass('signup');
+
+			$('form button').text('SIGNUP')
+		})
+
+		$('.input input').on('focus',function(){
+			$(this).parent().addClass('focus');
+		})
+		$('.input input').on('blur',function(){
+			if($(this).val() === '')
+				$(this).parent().removeClass('focus');
+		})
+	</script>
+</body>
+</html>
