@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="ul">
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+		<li>444</li>
+		<li>555</li>
+	</div>
+	<script>
+		//本来应该li（子元素）来做的点击事件交给ul（父元素）来做，称作事件委托
+		//原理：事件冒泡
+		var ul = document.getElementById('ul');
+		ul.onclick = function(e){
+			//'e'为事件参数（事件对象）当事件发生的时候，可以获取一些和事件相关的数据
+			//获取当前点击的li
+
+			//e.target  是真正触发事件的对象，就是真正点击的对象
+			//让当前点击的li高亮显示
+			e.target.style.backgroundColor = 'red';
+		}
+	</script>
+</body>
+</html>
