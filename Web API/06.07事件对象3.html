@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			height: 1000px;
+		}
+		#box{
+			margin: 100px;
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+	<script>
+		var box = document.getElementById('box');
+		box.onclick = function(e){
+			e = e || window.event;
+			console.log('client:')
+			console.log(e.clientX);
+			console.log(e.clientY);
+			//获取的相对于浏览器视窗左上角的坐标
+			//不计算滚动区域
+			//没有兼容性问题
+
+			console.log('page:')
+			console.log(e.pageX);
+			console.log(e.pageY);
+			//计算滚动区域
+			//有兼容性问题IE9以后才支持
+		}
+
+	</script>
+</body>
+</html>

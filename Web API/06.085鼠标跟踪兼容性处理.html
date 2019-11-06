@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 2000px;
+			width: 1500px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		document.onclick = function(){
+			console.log("横向滚动：" + document.body.scrollLeft);
+			console.log("纵向滚动：" + document.body.scrollTop);
+			//documentElement 文档的根元素 html标签
+			console.log("横向滚动：" + document.documentElement.scrollLeft);
+			console.log("纵向滚动：" + document.documentElement.scrollTop);
+		}
+	</script>
+</body>
+</html>
