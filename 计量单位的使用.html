@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#d1{
+			width: 250px;
+			height: 100px;
+			background-color: pink;
+			font-size: 20px;
+		}
+		#d1 div{
+			float:left;
+		}
+		#d1 div:first-child{
+			width: 100px;
+			height: 80px;
+			background-color: hotpink;
+			font-size: .8em;
+		}
+		#d1 div:last-child{
+			width: 100px;
+			height: 80px;
+			background-color: deeppink;
+			font-size: 2rem;
+		}
+
+		#d2{
+			margin-top: 50px;
+			width: 10vw;
+			height: 10vh;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">
+		园 20px
+		<div>园 .8em</div>
+		<div>园 2rem</div>
+	</div>
+
+	<div id="d2">10vh,10vw</div>
+</body>
+</html>

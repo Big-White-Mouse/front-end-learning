@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu Item Hove</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: .5s;
+			min-height: 100vh;
+		}
+		ul{
+			position: relative;
+			margin-bottom: 80px;
+		}
+		ul li{
+			display: block;
+			height: 45px;
+			list-style: none;
+			text-align: center;
+		}
+		ul li a{
+			text-decoration: none;
+			font-size: 28px;
+			font-weight: 540;
+			color:#000;
+			transition: .3s;
+		}
+		ul:hover li a{
+			color:rgba(0,0,0,0.3);
+		}
+		ul li:hover a{
+			color:#eee;
+			text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+		}
+	</style>
+</head>
+<body>
+	<!-- 此样式慎用 可能不久后不再支持 并且结构不美观 代码分离差-->
+	<ul>
+		<li onmouseover="javascript:changeColor('ff6b6b')" onmouseout="javascript:changeColor('transparent')"><a href="#">HOME</a></li>
+		<li onmouseover="javascript:changeColor('feca57')" onmouseout="javascript:changeColor('transparent')"><a href="#">ABOUT</a></li>
+		<li onmouseover="javascript:changeColor('50ff66')" onmouseout="javascript:changeColor('transparent')"><a href="#">Services</a></li>
+		<li onmouseover="javascript:changeColor('48dbfb')" onmouseout="javascript:changeColor('transparent')"><a href="#">Portfolio</a></li>
+		<li onmouseover="javascript:changeColor('f368e0')" onmouseout="javascript:changeColor('transparent')"><a href="#">Our Team</a></li>
+		<li onmouseover="javascript:changeColor('7143ff')" onmouseout="javascript:changeColor('transparent')"><a href="#">Home</a></li>
+	</ul>
+	<script>
+		function changeColor(color){
+			document.bgColor = color;
+		}
+	</script>
+</body>
+</html>
