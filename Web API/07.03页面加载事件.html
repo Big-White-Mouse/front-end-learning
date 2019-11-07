@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//BOM onload 页面加载完成之后执行
+		// window.onload
+		//页面加载完成 指页面上所有的元素创建完毕，并且引用的外部资源（js，css，图片）下载完毕
+		onload = function(){
+			console.log(my$('box'));
+		}
+		//由于需要加载图片，所以把script放在body底部效率高一些
+
+		//所有的元素都有onload事件，可以用来控制元素加载完成后做一些事情
+
+
+		onunload = function(){
+			//在onunload中的所有对话框都无法使用 因为关闭界面时 window对象被冻结
+			// alert('bye bye');
+			//会报错：Blocked alert（...）during unload
+			console.log('bye bye');
+		}
+		//F5键
+		//1. 卸载页面
+		//2. 重新加载页面
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+	<script src="common.js"></script>
+</body>
+</html>
