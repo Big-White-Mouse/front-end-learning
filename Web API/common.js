@@ -1,3 +1,4 @@
+//获取元素 使用方法：my$('id');
 function my$(id) {
   return document.getElementById(id);
 }
@@ -69,3 +70,30 @@ function removeEventListener(element,eventName,fn){
 }
 
 
+//获取页面滚动距离兼容性问题解决
+function getScroll(){
+  var scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+  var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  return {
+    scrollTop: scrollTop,
+    scrollLeft: scrollLeft
+  }
+}
+
+
+//通过页面滚动来处理pageX的兼容性问题
+//使用时注意传递参数
+//例如：
+  // document.onclick = function(e){
+  //   e = e || window.event;
+  //   console.log(getPage(e).pageX);
+  //   console.log(getPage(e).pageY);
+  // }
+function getPage(e){
+  var pageX = e.pageX || e.clientX + getScroll().scrollLeft;
+  var pageY = e.pageY || e.clientY + getScroll().scrollTop;
+  return {
+    pageX: pageX,
+    pageY: pageY
+  }
+}

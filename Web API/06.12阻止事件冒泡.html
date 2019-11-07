@@ -39,19 +39,15 @@
 		//当addEventListener第三个参数为false的时候：此时称为事件冒泡
 		//当addEventListener第三个参数为true的时候：此时称为事件捕获
 		for(var i=0;i<array.length;i++){
-			// addEventListener有三个参数，当触发第一个参数事件时执行第二个参数的函数。
-			array[i].addEventListener('click',function(){
+			array[i].addEventListener('click',function(e){
 				console.log(this.id);
+
+				e.stopPropagation();//停止传播 标准DOM方法
+				//e.cancleBubble = true;//取消冒泡 非标准方式 老版本的IE的方法
+				
+
 			},false);
 		}
-
-		document.body.addEventListener('click',function(){
-			console.log('body');
-		},false);
-
-		//box.onclick
-		//box.attachEvent 
-		//以上俩个注册事件的方式只有事件冒泡
 	</script>
 </body>
 </html>

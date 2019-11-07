@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			height: 2000px;
+			width: 1500px;
+		}
+		div{
+			margin-top: 500px;
+			height: 200px;
+			width: 200px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<script src="common.js"></script>
+	<script>
+		document.onclick = function(){
+			// console.log("横向滚动：" + document.body.scrollLeft);
+			// console.log("纵向滚动：" + document.body.scrollTop);
+			// //documentElement 文档的根元素 html标签
+			// console.log("横向滚动：" + document.documentElement.scrollLeft);
+			// console.log("纵向滚动：" + document.documentElement.scrollTop);
+
+			//引用兼容性解决函数
+			console.log(getScroll().scrollTop);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<a id="link" href="http://baidu.com">baidu</a>	
+	<script src="common.js"></script>
+	<script>
+		my$('link').onclick = function(){
+			alert('hello');
+
+			//取消默认行为（跳转到百度）
+			// return false;
+
+			//DOM标准方法
+			// e.preventDefault()
+
+			//IE老版本方法
+			// e.returnValue = false;
+
+			
+		}
+	</script>
+</body>
+</html>

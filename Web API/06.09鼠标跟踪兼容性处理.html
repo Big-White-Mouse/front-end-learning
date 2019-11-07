@@ -9,21 +9,26 @@
 		}
 		#ts{
 			position: absolute;
-			transition: .1s;
+			transition: .08s;
 		}
 	</style>
 </head>
 <body>
 	<img src="../images/wings.png" id="ts" alt="">
+	<script src="common.js"></script>
 	<script>
 		var ts = document.getElementById('ts');
 		document.onmousemove = function(e){
 			e = e || window.event;
-			ts.style.left = e.pageX-15 + 'px';
-			ts.style.top = e.pageY-15 + 'px'
-
-			// pageY = clientY + 页面滚动出去的距离
+			ts.style.left = getPage(e).pageX-15 + 'px';
+			ts.style.top = getPage(e).pageY-15 + 'px'
 		}
+
+		// document.onclick = function(e){
+		// 	e = e || window.event;
+		// 	console.log(getPage(e).pageX);
+		// 	console.log(getPage(e).pageY);
+		// }
 	</script>
 </body>
 </html>
