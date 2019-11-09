@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<input type="button" value="开始" id="btn1">
+	<input type="button" value="取消" id="btn2">
+	<script src="common.js"></script>
+	<script>
+		//setTimeout() 定时炸弹 隔一段时间执行 并且只会执行一次
+		//setInterval()	闹钟 隔一段时间执行，并且会重复执行
+		var timerId,timerId1,timerId2,timerId3;
+		my$('btn1').onclick = function(){
+			timerId3 = setTimeout(function(){
+				console.log('3');
+			},1);
+			timerId2 = setTimeout(function(){
+				console.log('2');
+			},1000);
+			timerId1 = setTimeout(function(){
+				console.log('1');
+			},2000);
+			// window.setTimeout()
+			//两个参数 
+			//第一个参数是要执行的参数
+			//第二个参数 间隔的时间 单位是毫秒
+			//返回值是一个整数 是定时器的标识
+			console.log('开始了');
+			timerId = setTimeout(function(){
+				console.log('BOOM!!!');
+			},3000)
+		};
+		my$('btn2').onclick = function(){
+			//取消定时器执行
+			clearTimeout(timerId);
+			clearTimeout(timerId1);
+			clearTimeout(timerId2);
+			clearTimeout(timerId3);
+			console.log('取消了');
+		}
+	</script>
+</body>
+</html>

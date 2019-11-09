@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>	
+		#btn{
+			float:left;
+		}
+		#tip{
+			float:left;
+			margin-left:10px;
+			border: 1px solid orange;
+			font-size: 12px;
+			height: 22px;
+			width: 60px;
+			line-height: 22px;
+			text-align: center;
+			font-weight: 600;
+			color: #eee;
+			background-color: orange;
+			opacity: 0;
+			transition: .3s;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="删除" id="btn">
+	<div id="tip">删除成功</div>
+	<script src="common.js"></script>
+	<script>
+		my$('btn').onclick = function(){
+			//删除操作，暂不制作
+			//显示删除成功的tip
+			my$('tip').style.opacity = 1;
+			//2秒后让tip隐藏
+			setTimeout(function(){
+				tip.style.opacity = 0;
+			},1500)
+		}
+	</script>
+</body>
+</html>
