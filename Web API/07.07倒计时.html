@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+		}
+		.time{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-100%);
+			color:#ddd;
+			text-align: center;
+		}
+		.day,
+		.hour,
+		.minute,
+		.second{
+			font-size: 24px;
+			color:#fff;
+		}
+		#DAY{
+			font-size: 36px;
+			font-weight: 700;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="time">	
+		<h1 class="title">距离 <span id="DAY"> 双十一 </span> 还有</h1>
+		<div class="time-item">	
+			<strong><span id="day" class="day">00</span>天</strong>
+			<strong><span id="hour" class="hour">00</span>小时</strong>
+			<strong><span id="minute" class="minute">00</span>分钟</strong>
+			<strong><span id="second" class="second">00</span>秒</strong>
+		</div>
+	</div>
+	<script src="common.js"></script>
+	<script>
+		//目标时间
+		var endDate = new Date('2019-11-11');
+		var spanDay = my$('day');
+		var spanHour = my$('hour');
+		var spanSecond = my$('second');
+		var spanMinute = my$('minute');
+
+		var countdown = function(){
+			// 当前时间
+			var startDate = new Date()
+			//计算时间差
+			var interval = getInterval(startDate,endDate);
+
+			setInnerText(spanDay,interval.day);
+			setInnerText(spanHour,interval.hour);
+			setInnerText(spanMinute,interval.minute);
+			setInnerText(spanSecond,interval.second);
+		} 
+		countdown();
+		setInterval(countdown,1000);
+	</script>
+</body>
+</html>

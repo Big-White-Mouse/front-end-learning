@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="开始" id="btn1">
+	<input type="button" value="取消" id="btn2">
+
+	<script src="common.js"></script>
+	<script>
+		// setInterval()闹钟 一段时间后执行，会重复执行
+		my$('btn1').onclick = function(){
+			setInterval(function(){
+				console.log('早上8点了！');
+			},1000)
+		}
+	</script>
+</body>
+</html>
