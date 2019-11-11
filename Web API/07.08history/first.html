@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>第一个网页</h1>
+<a href="second.html">second</a>
+<input type="button" value="前进" id="btn2">
+<script src="../common.js"></script>
+<script>
+my$('btn2').onclick = function(){
+    //window.history 历史
+    // history.forward();
+    //这个按钮要先点击 一遍链接回退后才能用
+
+    //第二中方法
+    history.go(1);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="跳转" id="btn1">
+<input type="button" value="替换" id="btn2">
+<input type="button" value="重载" id="btn3">
+<script src="common.js"></script>
+</body>
+</html>
+<script>
+    my$('btn1').onclick = function(){
+        // console.log(location.href);
+
+        // assign 委派 assign()作用和href一样，可以让页面跳转到指定的地方
+        //可以记录历史
+        location.assign('http://www.baidu.com');
+    }
+    my$('btn2').onclick = function() {
+        //替换掉地址栏中的地址，但是不记录历史（不能回退）
+        location.replace('http://www.baidu.com');
+    }
+    my$('btn2').onclick = function() {
+        location.reload();
+        //重新加载，效果同F5相同
+        //有两个参数，(true)强制从服务器获取页面；(false)如果浏览器有缓存的话，直接从缓存获取页面
+    }
+</script>
