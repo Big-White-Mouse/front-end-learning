@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            line-height: 40px;
+            height: 40px;
+            width: 100%;
+            background-color: darkseagreen;
+        }
+        .nav a{
+            margin-left: 16px;
+            text-decoration: none;
+            font-size: 18px;
+            color:#222;
+        }
+        .d-box{
+            width: 300px;
+            height: 200px;
+            background-color: #eee;
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #666;
+            border-right: 2px solid #666;
+            box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.3);
+            /*transition: .1s;*/
+        }
+        .hd{
+            padding-left: 6px;
+            display: block;
+            height: 24px;
+            line-height: 24px;
+            font-size: 16px;
+            background-color: #ccc;
+            cursor: move;
+        }
+        .hd span{
+            margin-right: 6px;
+            float:right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <a href="#" id="register">注册信息</a>
+</div>
+<div class="d-box" id="d-box">
+    <div class="hd" id="drop">注册信息
+        <span id="box-close">[关闭]</span>
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    my$('drop').onmousedown = function(e){
+        //兼容性处理
+        e = e || window.event;
+        //当鼠标按下的时候
+
+        //先求鼠标在盒子的位置 = 鼠标在页面的位置 - 盒子在页面的位置
+        var x = getPage(e).pageX - my$('d-box').offsetLeft;
+        var y = getPage(e).pageY - my$('d-box').offsetTop;
+
+        //按下的鼠标在页面中移动时
+        document.onmousemove = function(e){
+            //兼容性处理
+            e = e || window.event;
+            //求盒子的坐标 = 鼠标当前在页面中的位置 - 鼠标在盒子中的位置
+            var boxX = getPage(e).pageX - x;
+            var boxY = getPage(e).pageY - y;
+
+            //更改盒子的位置
+            my$('d-box').style.left = boxX + 'px'
+            my$('d-box').style.top = boxY + 'px'
+        }
+    }
+    //当鼠标弹起的时候，移除跟随鼠标事件
+    document.onmouseup = function(e){
+        //兼容性处理
+        e = e || window.event;
+        document.onmousemove = null;
+    }
+    //点击关闭按钮 隐藏盒子
+    my$('box-close').onclick = function(){
+        my$('d-box').style.opacity = 0;
+    }
+    //点击注册信息 打开盒子
+    my$('register').onclick = function (){
+        my$('d-box').style.opacity = 1;
+    }
+</script>
+</body>
+</html>

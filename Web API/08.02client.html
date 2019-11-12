@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+        border: 10px solid red;
+        padding: 10px;
+        background-color: darkorange;
+    }
+</style>
+<body>
+<div id="box">
+
+</div>
+<script src="common.js"></script>
+<script>
+    //宽高不包括边框，但是包括内边距
+    console.log(my$('box').clientWidth);
+    console.log(my$('box').clientHeight);
+
+    //获取的是边框的宽高
+    console.log(my$('box').clientLeft);
+    console.log(my$('box').clientTop);
+<!--    console.log(my$('box').client);-->
+<!--</script>-->
+</body>
+</html>

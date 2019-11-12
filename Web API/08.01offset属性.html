@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 50px;
+            overflow: hidden;
+        }
+        #child{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin-left: 50px;
+            margin-top: 50px;
+            border: 10px solid yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="child">
+
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    //3组与大小位置相关的属性
+    //offset client scroll
+
+    //获取坐标    offset获取距离当前元素最近的有定位的父元素，没有则为body
+    console.log(my$('box').offsetTop);
+    console.log(my$('box').offsetLeft);
+    console.log(my$('child').offsetLeft);
+
+    //获取大小   计算border
+    console.log(my$('box').offsetWidth);
+    console.log(my$('box').offsetHeight);
+    console.log(my$('child').offsetWidth);
+    console.log(my$('child').offsetHeight);
+
+</script>
+</body>
+</html>
