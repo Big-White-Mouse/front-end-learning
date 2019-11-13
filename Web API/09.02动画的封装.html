@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始500" id="btn">
+<input type="button" value="开始1000" id="btn1">
+<div id="box"></div>
+<script src="common.js"></script>
+<script>
+    //1.点击按钮，让盒子向右移动
+    let box = document.getElementById('box');
+    let timerId = null;
+    my$('btn').onclick = function(){animate(box,500);};
+    my$('btn1').onclick = function(){animate(box,1000);};
+    function animate(element,target){
+        let step = 10;
+        //通过判断保证页面上只有一个定时器在执行动画
+        if(timerId){
+            clearInterval(timerId);
+            timerId = null;
+        }
+        //2.让盒子不停地向右移动
+        timerId = setInterval(function(){
+                if(element.offsetLeft >= target){
+                    //停止定时器
+                    clearInterval(timerId);
+                    //退出函数
+                    return 0;
+                } else {
+                    element.style.left = element.offsetLeft + step + 'px';
+                }
+        },30)
+    }
+</script>
+</body>
+</html>

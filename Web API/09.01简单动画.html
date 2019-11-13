@@ -25,16 +25,18 @@
 <script>
     //1.点击按钮，让盒子向右移动
     var box = document.getElementById('box');
+    var target = 500;
+    var step = 10;
     my$('btn').onclick = function(){
         //2.让盒子不停地向右移动
         var timerId = setInterval(function(){
-            if(box.offsetLeft >= 500){
+            if(box.offsetLeft >= target){
                 //停止定时器
                 clearInterval(timerId);
                 //退出函数
                 return;
             } else {
-                box.style.left = box.offsetLeft + 10 + 'px';
+                box.style.left = box.offsetLeft + step+ 'px';
             }
         },30)
     }
