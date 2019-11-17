@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Student(name,age,sex){
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+
+        // this.sayHi = function(){
+        //    这种方式创建方法每创建一个对象就会在内存中开辟一块空间，非常占内存
+        // }
+    }
+    ///每一个构造函数都有一个属性 叫原型/原型对象 Student.prototype
+    Student.prototype.sayHi = function(){
+        console.log('大家好，我是' + this.name);
+    };
+    //给对象动态增加方法，原型对象的所有方法通过其构造函数创建的所有对象都可以访问
+    let s1 = new Student('zs',18,'男');
+    let s2 = new Student('ls',18,'女');
+    s1.sayHi();
+    s2.sayHi();
+    console.log(s1.sayHi === s2.sayHi);
+</script>
+</body>
+</html>

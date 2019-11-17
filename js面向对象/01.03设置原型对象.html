@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function Student(name,age){
+    this.name = name;
+    this.age = age;
+}
+//一般情况下对象的方法在构造函数的原型对象中设置
+//     Student.prototype.sayHi = function(){
+//         console.log('sayHi');
+//     }
+//     Student.prototype.eat = function(){
+//         console.log('eat');
+//     }
+    //当要设置多个方法的时候代码重复较多
+
+//可以重新设置原型对象prototype的属性 设置为一个新的对象
+Student.prototype = {
+
+    //解决实例对象不能访问其原型对象的constructor问题
+    constructor: Student,
+
+    sayHi: function(){
+        console.log('sayHi');
+    },
+    eat: function(){
+        console.log('eat');
+    }
+};
+//如果此时再通过它构造函数实例出来的对象访问其原型对象的constructor，返回的是Object
+let s1 = new Student('zs',18);
+console.log(s1.constructor);
+s1.sayHi();
+
+//注意：先设置原型对象的属性，再创建对象，才可以访问原型对象中的成员；
+</script>
+</body>
+</html>

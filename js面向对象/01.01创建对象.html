@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<script>
+    //1. new Object()
+    let hero1 = new Object(); //空对象
+    hero1.blood = 100;
+    hero1.name = '刘备';
+    hero1.weapon = '健';
+
+    hero1.attack = function(){
+        console.log(this.weapon + ' 攻击敌人');
+    };
+    //2.对象字面量
+    //用大括号的方式和上面创建空对象的方法们没有太大的差别，所以创建空对象经常用大括号的方式
+    let hero2 = {
+        blood: 100,
+        name: '刘备',
+        weapon: '健',
+        attack: function(){
+            console.log(this.weapon + ' 攻击敌人');
+        }
+    };
+    hero2.attack();
+    //以上两种方法只适用于创建单个对象
+
+    //创建多个对象
+    //1.工厂函数
+    function createHero(name,blood,weapon){
+        let o = new Object();
+        o.name = name;
+        o.blood = blood;
+        o.attack = function(){
+            console.log(this.weapon + ' 攻击敌人');
+        };
+        return o;
+    }
+    let hero3 = createHero('关羽',100,'长刀');
+    let hero4 = createHero('张飞',100,'大刀');
+        //由此创建的对象类型全部为object
+        //不方便判断对象的类型
+
+    //2.构造函数--构造对象的函数 采用蛇形命名法 以一个单词的首字母大写
+    function Hero(name,blood,weapon){
+        this.name = name;
+        this.blood = blood;
+        this.weapon = weapon;
+
+        this.attack = function(){
+            console.log(this.weapon + ' 攻击敌人');
+        }
+    }
+    //使用
+    let hero5 = new Hero('诸葛亮',100,'朱雀羽扇');
+    //经历4步
+    //1.会在内存中默认自动创建一个空的 Hero类 的对象
+    //2.设置构造函数的this, 让this执行刚刚创建好的对象
+    //3.执行构造函数中的代码
+    //4.返回对象
+    hero5.attack();
+    //无法使用typeof获取对象的具体类型
+    //对象中有一个属性，属性指向了创建对象的构造函数
+    //console.log(hero5.constructor); 不建议使用这种方法获取类型
+    // console.log(hero5 instanceof Hero); 判断某个对象是否是某个构造函数的实例/对象
+
+</script>
+</body>
+</html>
