@@ -38,17 +38,15 @@
 }
 .grid-col1 ul{
 	padding: 10px 0;
-
 }
 .grid-col1 li{
 	padding-left:12px;
 	font-size: 16px;
 	color:#fff;
-	line-height:28px; 
+	line-height:28px;
 }
 .grid-col1 li:hover{
 	background-color: rgba(255,255,255,0.3);
-
 }
 .grid-col1 a{
 	margin: 0 3px;
@@ -120,7 +118,6 @@ position: relative;
 	background-color:#fff;
 	padding:15px;
 	font-size: 14px;
-
 }
 .login-t{
 	width: 95px;
@@ -155,7 +152,6 @@ position: relative;
 	border-radius: 50%;
 }
 .login-b{
-
 }
 .login-b a{
 	display: inline-block;
@@ -171,7 +167,6 @@ position: relative;
 	background-color: #f10215;
 	color:#fefefe;
 }
-
 .news{
 	height: 154px;
 	border-bottom: 1px solid #ccc;
@@ -179,7 +174,7 @@ position: relative;
 	padding:7px 13px 0;
 }
 .news-t{
-	height: 19px;																		
+	height: 19px;
 	border-bottom: 1px solid #666;
 }
 .news-t a{
@@ -200,7 +195,7 @@ position: relative;
 	padding-left: 8px;
 	border-right: 1px solid #ccc;
 }
-.news-t .note{
+.news-t .note {
 	padding-left: 8px;
 }
 .news-t .more{
@@ -221,6 +216,12 @@ position: relative;
 	height: 23px;
 	line-height: 23px;
 }
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
 .expand{
 	height: 208px;
 	background-color: #fff;
@@ -235,4 +236,5 @@ position: relative;
 	border-right: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 	float:left;
+
 }

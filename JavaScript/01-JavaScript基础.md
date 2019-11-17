@@ -123,7 +123,7 @@ CSS：行内样式、嵌入样式、外部样式
 - 写在外部js文件中，在页面引入
 
 ```html
-<script src="main.js"></script>
+<script src="index.js"></script>
 ```
 
 - 注意点

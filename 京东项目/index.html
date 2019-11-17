@@ -171,19 +171,29 @@
 		 			</div>
 		 		</div>
 		 		<div class="news">
-		 			<div class="news-t">
+		 			<div class="news-t" id="newsT">
 		 				<a href="#" class="sale">促销</a>
 		 				<a href="#" class="note">公告</a>
 		 				<a href="#" class="more">更多</a>
+						<div id="flag"></div> <!--红线-->
 		 			</div>
-		 			<div class="news-b">
-		 				<ul>
-		 					<li><a href="#">挑战3天不洗头</a></li>
-		 					<li><a href="#">AMD锐龙Ryzen3首发</a></li>
-		 					<li><a href="#">家具狂欢领券199减100</a></li>
-		 					<li><a href="#">益生菌领券399减100</a></li>
-		 				</ul>
-		 			</div>
+					<div id="newsContainer">
+						<div class="news-b show">
+							<ul>
+								<li><a href="#">挑战3天不洗头</a></li>
+								<li><a href="#">AMD锐龙Ryzen3首发</a></li>
+								<li><a href="#">家具狂欢领券199减100</a></li>
+								<li><a href="#">益生菌领券399减100</a></li>
+							</ul>
+						</div>
+						<div class="news-b hide">
+							<ul>
+								<li><a href="#">从今天起放假3天</a></li>
+								<li><a href="#">全场商品5折</a></li>
+								<li><a href="#">下单即送现金红包</a></li>
+							</ul>
+						</div>
+					</div>
 		 		</div>
 		 		<div class="expand">
 		 			<ul>
@@ -309,5 +319,8 @@
 		</div>
 	</footer>
 	<!-- footer end -->
+	<script src="js/common.js"></script>
+	<script src="js/animate.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>
