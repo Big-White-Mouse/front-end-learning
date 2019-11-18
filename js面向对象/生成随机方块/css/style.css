@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+}
+#container{
+    width: 800px;
+    height: 600px;
+    margin: 100px auto;
+    background-color: lightgray;
+    position: relative;
+}
