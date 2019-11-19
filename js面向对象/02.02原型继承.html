@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //拷贝：对象与对象之间的关系
+    //继承：类型与类型之间的关系
+    //继承的目的：把子类型中共同的成员提取到父类型中，代码重用
+    //继承的手段1:通过原型函数（不使用）
+
+    //学生类型  老师类型
+    //把上面两种类型抽象出一个父类型-->Person
+
+    //父类型
+    function Person(){
+        this.name = 'zs';
+        this.age = 18;
+        this.sex = '男';
+    }
+
+    //子类型
+    function Student(){
+        this.score = 100;
+    }
+    //继承的手段:通过原型函数
+    Student.prototype = new Person();
+    //由于更改了学生类型的原型属性，生成的学生对象的构造函数不再是Student了，而变成了Person也就是更改后的原型属性的构造函数
+    Student.prototype.constructor = Student;
+    let s1 = new Student();
+
+    //由于new person只调用一次，所以原型继承无法设置构造函数的参数
+
+    function Teacher(){
+        this.salary = 5000;
+    }
+
+</script>
+</body>
+</html>

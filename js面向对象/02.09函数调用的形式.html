@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //把函数赋值给变量的时候不用加括号，，，当调用函数的之后要加括号
+
+    //1.作为普通函数调用  this指向window
+    // function fn() {
+    // }
+    // fn();
+    //window.fn();
+
+    //2.作为方法调用    this指向调用方法的对象（此处为obj）
+    // let obj = {
+    //     fn:function(){
+    //     }
+    // }
+    // obj.fn();
+
+    //3.作为构造函数调用  详见01.01  2.中的内容
+    //构造函数中的this指向由该构造函数创建的对象
+
+    //4.作为事件处理函数div.onclick = function(){};
+    //this指向触发该事件的对象（此处指向div）
+
+    //5.作为定时器的参数    this指向window
+    // setInterval(function(){},200)
+
+    //总结： 函数内部的this，是由函数调用的时候来确定其指向的
+
+    //例1：
+    function fn(){
+        console.log(this);
+    }
+    //fn(); 此时调用的时候this指向window
+    let obj1 = {
+        name: 'zs',
+        fn:fn
+    };
+    obj1.fn();//此时this指向obj1这个对象
+
+    //例2
+    let obj2 = {
+        name: 'zs',
+        fn: function(){
+            console.log(this);
+        }
+    };//this->obj2
+    let fn1 = obj2.fn;
+    fn();//普通函数调用 this->window
+
+</script>
+</body>
+</html>

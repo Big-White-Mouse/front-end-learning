@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //call bind apply 三个方法
+    function fn(){
+    }
+    //证明fn是Function的实例（对象）
+    // console.log(fn.__proto__ === Function.prototype);
+    // console.dir(fn);
+    function fn(x,y){
+        console.log(this);
+        console.log(x + y);
+    }
+
+    //fn.call();  功能：
+    //1. 调用参数，改变函数的this
+    //2. 第一个参数 设置函数内部this的指向
+    //  其他参数 对应函数的参数
+    //3.函数的返回值  call的返回值就是函数的返回值
+    //测试
+    // var obj = {
+    //   name: 'zs'
+    // }
+    // fn.call(obj, 5, 6);
+
+    // apply 只有两个参数
+    // 1 调用函数，改变函数中的this
+    // 2 第一个参数  设置函数内部this的指向
+    //   第二个参数  是数组
+    // 3 函数的返回值 apply的返回值就是函数的返回值
+    // 测试
+    // let obj = {
+    //   name: 'ls'
+    // };
+    // fn.apply(obj, [1, 2]);
+    //call()方法的作用和 apply() 方法类似，区别就是call()方法接受的是参数列表，而apply()方法接受的是一个参数数组。
+
+    // bind
+    // 1 改变函数中的this，不会调用函数，而是把函数复制一份
+    // 2 第一个参数 设置函数内部this的指向
+    //   其它参数，对应函数的参数
+    // 3 函数的返回值 call的返回值就是函数的返回值
+    // 4 测试
+    let obj = {
+        name: 'ww'
+    };
+
+    let f = fn.bind(obj, 5, 5);
+    f();
+</script>
+</body>
+</html>

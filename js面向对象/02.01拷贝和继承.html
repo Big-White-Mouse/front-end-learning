@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let wjl = {
+        name: '王健林',
+        money: 10000000,
+        cars: ['玛莎拉蒂', '特斯拉'],
+        houses: ['别墅', '大别墅'],
+        play: function () {
+            console.log('打高尔夫');
+        }
+    };
+
+    let wsc = {
+        name: '王思聪'
+    };
+
+    // // 复制对象的成员给另一个对象
+    // for (var key in wjl) {
+    //   // 不给wsc复制同名的属性
+    //   if (wsc[key]) {
+    //     continue;
+    //   }
+    //   wsc[key] = wjl[key];
+    // }
+
+    // console.dir(wsc);
+
+    // 不是真正的继承，，这被称作对象的拷贝
+    // 把‘复制对象的成员给另一个对象’ 的函数封装
+    function extend(parent, child) {
+        for (let key in parent) {
+            // 不给wsc复制同名的属性
+            if (child[key]) {
+                continue;
+            }
+            child[key] = parent[key];
+        }
+    }
+    //调用
+    extend(wjl, wsc);
+
+    console.dir(wsc);
+
+</script>
+</body>
+</html>

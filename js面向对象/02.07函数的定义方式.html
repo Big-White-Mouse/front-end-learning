@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //1.函数声明
+    // function fn1(){
+    //     console.log('函数声明');
+    // }
+    // fn1();
+    //2.函数表达式
+    // let fn2 = function(){
+    //     console.log('函数表达式');
+    // }
+
+    //函数声明和函数表达式的区别 -----函数声明会被提升，函数表达式不会被提升；
+    fn1();
+    function fn1(){//预解析时函数被提升到代码的前面
+        console.log('函数声明');
+    }
+    //fn2();这一句报错
+    let fn2 = function(){//预解析时虽然定义变量被提升，但只是声明；将函数赋值还是在原先的位置
+        console.log('函数表达式');
+    };
+
+    //根据条件声明的函数
+    //现代浏览器 不会提升if语句中函数声明 在老的IE版本中if语句的函数也会被提升
+    // if(true){
+    //     function fn(){
+    //         console.log('fn-true');
+    //     }
+    // } else {
+    //     function fn(){
+    //         console.log('fn-false');
+    //     }
+    // }
+    //fn();//运行结果：fn-true
+    //解决：
+    // let fn;用函数表达式定义函数
+    // if(true){
+    //     fn = function(){
+    //         console.log('fn-true');
+    //     }
+    // } else {
+    //     fn = function(){
+    //         console.log('fn-false');
+    //     }
+    // }
+    // fn();
+</script>
+</body>
+</html>
