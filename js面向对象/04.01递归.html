@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //递归 自己调用自己
+    // function fn(){
+    //     let n = 10;
+    //     console.log(n);
+    //     fn();
+    // }
+    // fn();
+
+    //递归要写一个结束条件
+
+    //例 用递归1+2+3+.....+n
+    function getSum(n){
+        //递归结束条件
+        if(n === 1){
+            return 1;
+        }
+        return n + getSum(n - 1);
+    }
+    console.log(getSum(5));
+
+</script>
+</body>
+</html>
