@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //闭包：在一个作用域中可以访问另一个作用域的变量
+
+    //当函数执行完毕时函数的作用域和里面的变量一同被销毁了，外部无法访问
+    //所以未发生闭包
+    // function fn(){
+    //     let n = 10;
+    //     return n;
+    // }
+    // fn();
+
+    function fn(){
+        let n = 10;
+        return function(){
+            return n;//函数fn执行完后并不会销毁，因为变量n还有函数(f)要去访问
+        }//闭包的特点：延展了函数作用域的范围
+    }//
+    let fun = fn();
+    console.log(fun());//执行的时候会开启一个新的作用域closure(闭包)
+</script>
+</body>
+</html>

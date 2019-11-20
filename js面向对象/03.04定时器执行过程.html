@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    console.log('start');
+
+    setTimeout(function(){
+        console.log('timeout');
+    },0);//timeout是最后输出的
+
+    console.log('over');
+
+    //第一个和最后一个输出代码，setTimeout事件都在执行栈上
+    //但是setTimeout里的function被放到任务队列中去了
+    //js先把执行栈上的代码处理完，再去处理任务队列中代码
+</script>
+</body>
+</html>

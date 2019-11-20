@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul id="hero">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    //输出点击对象的索引
+
+    let hero = document.getElementById('hero');
+    //方式1
+    // for(let i=0;i<hero.children.length;i++){
+    //     let li = hero.children[i];
+    //     li.index = i;
+    //     li.onclick = function () {
+    //         console.log(this.index);
+    //     }
+    // }
+
+    //方式2  闭包  在发生闭包的时候 由于函数的作用域没有被销毁所以占内存，性能降低 所以获取索引推荐使用方式1
+    for(let i=0;i<hero.children.length;i++){
+        let li = hero.children[i];
+        //自调用函数
+        (function(i){
+            li.onclick = function () {
+                console.log(i);
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>

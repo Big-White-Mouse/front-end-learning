@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //案例1
+    // function getRandom(){
+    //     let random = parseInt(Math.random() * 10) + 1;
+    //     return function(){
+    //         return random;
+    //     }
+    // }
+    // let fn = getRandom();
+    // console.log(fn());
+    //getRandom中产生了闭包
+
+    //案例2
+    //求两个数的和 第一个数只有固定的几个  第二个数时传进来的参数
+    function getFunction(n){
+        return function(m){
+            return n + m;
+        }
+    }
+    //求100 + n
+    let fn100 = getFunction(100);
+    console.log(fn100(3));
+    console.log(fn100(6));
+    //求1000 + n
+    let fn1000 = getFunction(1000);
+    console.log(fn1000(3));
+    console.log(fn1000(6));
+</script>
+</body>
+</html>
