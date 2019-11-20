@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //3.bind 的应用
+    let obj = {
+        name: 'zs',
+        fn: function(){
+            setInterval(function() {
+                console.log(this.name);//此时这里的this指向调用setInterval的对象window  所以打印出来是空白的
+            }.bind(this),1000)//此处将上一个this改成了调用fn的对象obj  所以正常打印zs
+        }
+    };
+    obj.fn();
+
+    window.document.onclick = function(){
+        console.log(this.name);
+    }.bind(obj);
+</script>
+</body>
+</html>

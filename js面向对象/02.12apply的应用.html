@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //2.apply 的应用
+    //fn.apply(,[])
+
+    console.log(Math.max(3,5,6));
+
+    let arr = [5,6,7,8,9,10];
+    //Math.max不能求数组中的最大值
+    //console.log(Math.max(arr));//输出NAN
+
+    console.log(Math.max.apply(Math,arr));
+
+    console.log(arr);
+    console.log.apply(console,arr);
+
+</script>
+</body>
+</html>

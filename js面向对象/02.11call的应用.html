@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //1.call的应用
+    // Array.prototype.getSum = function(){
+    //
+    // };
+    // let arr = [1,2,3];
+    // arr.getSum();
+
+    //伪数组
+    let obj = {
+        0: 100,
+        1: 10,
+        2: 12,
+        3: 14,
+        length: 4,
+    };
+    // 伪数组添加成员 //obj.4数字不能做变量
+    // obj['4'] = 16;
+    // obj.length++;
+
+    //用call借用数组的方法实现成员的添加
+    Array.prototype.push.call(obj,30);
+    Array.prototype.splice.call(obj,0,3);//删除数组成员从第00项开始删除3项
+    console.dir(obj);
+
+</script>
+</body>
+</html>

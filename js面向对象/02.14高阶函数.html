@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //高阶函数
+    //当
+    //1.函数作为参数
+    // function eat(fn){
+    //     setTimeout(function(){
+    //         console.log('吃晚饭');
+    //         //吃完饭其他的事情
+    //         fn();
+    //     },3000)
+    // }
+    // eat(function(){
+    //    console.log('唱歌');
+    // });
+    // let arr = [2,4,6,8,10];
+    // arr.sort(function(a,b){
+    //     return b - a;
+    // });
+    // console.log(arr);
+
+    //当要给数组添加自己的新的排序方法(以冒泡排序为例)时
+    //arr.mySort()
+    // Array.prototype.mySort = function (fn) {
+    //     for (let i=0;i<this.length - 1;i++){
+    //         let isSort = true;
+    //         for(let j = 0;j < this.length - i - 1;j++){
+    //             if(fn(this[j],this[j+1]) > 0){
+    //                 isSort = false;
+    //                 let t = this[j];
+    //                 this[j] = this[j+1];
+    //                 this[j+1] = t;
+    //             }
+    //         }
+    //         if(isSort){
+    //             break;
+    //         }
+    //     }
+    // };
+    //
+    // let arr = [8,4,2,6,10];
+    // arr.mySort(function(a,b){
+    //     return a - b;
+    // });
+    // console.log(arr);
+
+    // 或
+    //2.函数作为返回值的时候
+    // function getRandom() {
+    //     return Math.random()
+    // }
+
+    //例1
+    // function getRandom() {
+    //     let random = parseInt(Math.random() * 10) + 1;
+    //     return function(){
+    //         return random;
+    //     }
+    // }
+    // let fn = getRandom();//这一次调用生成随机数
+    // console.log(fn());//剩下的几次函数调用返回的时已经保存在random里的数
+    // console.log(fn());
+    // console.log(fn());
+    // console.log(fn());
+
+    //例2
+    ///求两个数的和 第一个数只有固定的几个  第二个数时传进来的参数
+    //100 + n
+    //1000 + n
+    //10000 + n
+    function getFunction(n){
+        return function(m){
+            return n + m;
+        }
+    }
+    //求100 + n
+    let fn100 = getFunction(100);
+    console.log(fn100(3));
+    console.log(fn100(6));
+    //求1000 + n
+    let fn1000 = getFunction(1000);
+    console.log(fn1000(3));
+    console.log(fn1000(6));
+</script>
+</body>
+</html>
