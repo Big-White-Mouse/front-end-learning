@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>遍历 DOM 树</h1>
+<p style="color: green;">Tip: 可以在遍历的回调函数中任意定制需求</p>
+<div>
+    <ul id="list">
+        <li>123</li>
+        <li>456</li>
+        <li>789</li>
+    </ul>
+    <div>
+        <div>
+            <span>haha</span>
+        </div>
+    </div>
+</div>
+<div id="demo_node">
+    <ul>
+        <li>123</li>
+    </ul>
+    <p>hello</p>
+    <h2>world</h2>
+    <div>
+        <p>dsa</p>
+        <h3>
+            <span>dsads</span>
+        </h3>
+    </div>
+</div>
+<script>
+    //遍历指定元素下所有的子元素
+    function loadTree(parent){
+        for(let i=0;i<parent.children.length;i++){//隐含结束条件：当元素没有子元素的时候.children.length为0不进行递归
+            //遍历第一级子元素
+            let child = parent.children[i];
+            console.dir(child);
+            //遍历子元素的子元素
+            loadTree(child);
+        }
+    }
+    loadTree(document.body);
+</script>
+</body>
+</html>

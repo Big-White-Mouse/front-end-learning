@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //深拷贝： 多层复制
+    let obj1 = {
+        name: 'zs',
+        age: 18,
+        sex: '男',
+        dog:{
+            name: '金毛',
+            age: 2,
+        },
+        friends:['ls','ww'],
+    };
+
+    function deepCopy(o1,o2){//把o1的成员拷贝给o2
+        for(let key in o1){
+            //获取key属性的对应值
+            let item = o1[key];
+
+            if(item instanceof Object){//instanceof : 检测item对象 是否是 Object 构造函数的实例化对象
+                //如果item是对象    let o = {}
+                o2[key] = {};
+                deepCopy(item,o2[key]);
+            } else if(item instanceof Array) {
+                //如果item是数组    let arr = []
+                o2[key] = [];
+                deepCopy(item,o2[key]);
+            } else {
+                //如果item是简单类型
+                o2[key] = o1[key];
+            }
+        }
+    }
+
+    let obj2 = {};
+    deepCopy(obj1,obj2);
+    obj1.dog.name = "哈士奇";
+    obj1.friends[0] = 'xh';
+    console.dir(obj1);
+    console.dir(obj2);
+</script>
+</body>
+</html>

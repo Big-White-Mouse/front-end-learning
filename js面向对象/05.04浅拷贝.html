@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // //对象的拷贝
+    // 浅拷贝 :  拷贝的时候只能把对象的第一层属性拷贝
+    // let obj1 = {
+    //     name: 'zs',
+    //     age: 18,
+    //     sex: '男',
+    // };
+    // let obj2 = {};
+    //
+    // //封装成函数 - 把o1的成员复制给o2
+    // function copy(o1,o2){
+    //     for(let key in o1){
+    //         o2[key] = o1[key];
+    //     }
+    // }
+    // copy(obj1,obj2);
+    // console.dir(obj2);
+    // console.dir(obj1);
+
+    //浅拷贝的问题
+    let obj1 = {
+        name: 'zs',
+        age: 18,
+        sex: '男',
+        dog: {
+            name: '金毛',
+            age: 3,
+        }
+    };
+    let obj2 = {};
+
+    function copy(o1,o2){
+        for(let key in o1){
+            o2[key] = o1[key];
+        }
+    }
+    copy(obj1,obj2);
+
+    obj1.dog.name = "大黄";
+
+    console.dir(obj2);
+    //此时obj2里的dog成员的name属性也被更改为'大黄'
+    //因为obj1，2里的dog成员都是指向同一个dog对象的变量;
+    console.dir(obj1);
+</script>
+</body>
+</html>
