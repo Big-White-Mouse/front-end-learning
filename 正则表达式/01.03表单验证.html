@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    QQ号：<input type="text" id="txtQQ"><span></span><br>
+    邮箱：<input type="text" id="txtEMail"><span></span><br>
+    手机：<input type="text" id="txtPhone"><span></span><br>
+    生日：<input type="text" id="txtBirthday"><span></span><br>
+    姓名：<input type="text" id="txtName"><span></span><br>
+<script>
+    // 1 验证QQ号
+    let txtQQ = document.getElementById('txtQQ');
+    txtQQ.onkeyup = function () {//输入每个字符后立即检测
+        // 验证用户的输入是否是QQ号
+        let reg = /^\d{5,12}$/;
+        let span = this.nextElementSibling;
+        // 检测用户输入的文本是否匹配指定的模式（正则表达式）
+        if (!reg.test(this.value)) {
+            // 不匹配  在文本框后面的span中进行相应的提示
+            span.innerText = '请输入正确的QQ格式';
+            span.style.color = 'red';
+        } else {
+            // 匹配
+            span.innerText = '';
+            span.style.color = '';
+        }
+    };
+    // 2 验证邮箱
+    let txtEMail = document.getElementById('txtEMail');
+    txtEMail.onblur = function () {//当光标离开文本框的时候检测
+        // 验证用户的输入是否是邮箱地址  xxx@itcast.com.cn
+        let reg = /^\w+@\w+(\.\w+)+$/;
+        let span = this.nextElementSibling;
+        // 验证
+        if (!reg.test(this.value)) {
+            span.innerText = '请输入正确的电子邮箱格式';
+            span.style.color = 'red';
+        } else {
+            // 匹配
+            span.innerText = '';
+            span.style.color = '';
+        }
+    };
+</script>
+</body>
+</html>

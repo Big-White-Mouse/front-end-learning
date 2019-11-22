@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1. 替换所有空白
+    let str = "   123AD  asadf     asadfasf  adf ";
+    // trim() 去除前后的空格
+    //无效方案
+    // console.log( str.trim());
+    // replace() 只能替换掉第一个查找到的内容
+    // console.log(str.replace(' ', 'x'));
+
+    //有效方案
+    // console.log(str.replace(/\s/g, ''));
+    // console.log(str.split(' ').join(''));
+
+    // 2. 把所有,和，替换为.
+    // let str = "abc,efg,123，abc,123，a";
+    //
+    // console.log(str.replace(/,|，/g, '.'));
+
+    //贪婪模式：
+    //获取所有的标签
+    //<.+>
+    //系统找到'>'后还会贪婪地向后找所以导致<div>123<div>两个标签之间的内容也被获取
+    //只需 <.+?> 系统找到第一个>就停下不会再往后找了
+</script>
+</body>
+</html>

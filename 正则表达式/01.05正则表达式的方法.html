@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          salary="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" salary="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //正则表达式相关方法
+    //1.RegExp对象
+    //test()  匹配
+    //exec()  提取
+    //2.String对象
+    //match()
+    //replace()
+    //split()
+    //search()
+
+    let str = '张三：3000， 李四：4000， 王五：10000';
+    let reg = /\d+/g;//加'g'全局搜索以返回所有匹配值
+    // let salary = reg.exec(str);//exec只返回一个匹配的结果
+    // console.log(salary);
+    // salary = reg.exec(str);
+    // console.log(salary);
+    // salary = reg.exec(str);
+    // console.log(salary);
+    let salary = [];
+    do {
+        salary = reg.exec(str);
+        if(salary){
+            console.log(salary[0]);
+        }
+    } while(salary);
+</script>
+</body>
+</html>

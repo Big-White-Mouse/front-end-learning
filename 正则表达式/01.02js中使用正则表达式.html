@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //内置正则对象 RegExp有两个参数
+    //第一个参数 匹配模式(规则) pattern 字符串类型
+    //第二个参数 flag    i(ignore) 忽略大小写   g(global) 全局匹配
+    // let regularExpression = new RegExp('ab[a-z]','i');
+    //简写：
+    let regularExpression = /ab[a-z]/i;//本质与创建对象一样
+    let str = 'xyz';
+    let str1 = 'abc';
+    let str2 = 'abd';
+    let str3 = 'abz';
+    let str4 = 'abA';
+    let str5 = 'ab2';
+    console.log(regularExpression.test(str));
+    console.log(regularExpression.test(str1));
+    console.log(regularExpression.test(str2));
+    console.log(regularExpression.test(str3));
+    console.log(regularExpression.test(str4));
+    console.log(regularExpression.test(str5));
+</script>
+</body>
+</html>
