@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="改变颜色" id="btn">
+<input type="button" value="改变字体" id="btn1">
+<input type="button" value="改变内边距" id="btn2">
+<input type="button" value="改变颜色" id="btn3">
+<p class="cls">p</p>
+<p class="cls font">p</p>
+<p class="font">p</p>
+<span class="cls">s</span>
+<span class="cls font">s</span>
+<span class="font">s</span>
+<h1>h</h1>
+<h1>h</h1>
+<h1>h</h1>
+<ul id="ul">
+    <li><p>li>p</p></li>
+    <li>li</li>
+    <p>ul>p</p>
+</ul>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    // jQuery获取元素的方式
+    //1.根据id获取---id选择器---$("id的值");  获取一个元素
+    //2.根据标签名获取---标签选择器---$("标签的名字"); 可以获取多个元素  存放在一个伪数组里
+    // $("#btn").click(function(){
+    //     $("p").text('2');//.text方法 与DOM对象中的innerText方法类似
+    // });
+
+    //3.根据类样式获取---类选择器---$(".类样式的名字"); 可以获取多个元素  存放在一个伪数组里
+    $("#btn").click(function () {
+        $(".cls").css("backgroundColor","green");
+    });
+
+    //4.标签+类选择器
+    $("#btn1").click(function () {
+        $("p.font").css("font-size","22px");
+    });
+    //5.多条件选择器
+    $("#btn2").click(function () {
+        $("span,h1").css("padding-left","50px");
+    });
+    //6.层次选择器
+    $("#btn3").click(function () {
+        $("#ul p").css("backgroundColor","orange");//获取到ul里所有的p //也叫后代选择器
+        $("#ul>p").css("color","white");//获取到ul的第一级子元素的p  //也叫子代选择器
+    });
+</script>
+</body>
+</html>

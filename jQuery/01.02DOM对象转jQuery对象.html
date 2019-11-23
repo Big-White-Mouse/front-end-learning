@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" value="变色" id="btn">
+<script src="jquery-3.4.1.js"></script>
+<script>
+    //DOM方法
+    // btn.onclick = function(){
+    //     this.style.backgroundColor = 'red';
+    // };
+
+    //jQuery方法
+    //DOM对象转jQuery对象， 只需要把DOM对象放在$(DOM对象)里  就变成jQuery对象了；
+
+    //3种转换方法
+    //1.
+    // let btnObj = document.getElementById('btn');
+    // console.dir($(btnObj));
+    //2.
+    // console.dir($(btn));
+    //3.
+    // console.dir($('#btn'));
+
+    //第二种方法应用演示
+    // $(btn).click(function(){
+    //     $(this).css('backgroundColor','red');
+    // });
+
+    //把jQuery对象转DOM对象 两种方式
+    //1. $(btn).get(0);--->
+    //2. $(btn)[0]--->DOM对象
+    // let btnObj = $(btn).get(0);
+    // btnObj.onclick = function () {
+    //     this.style.backgroundColor='red';
+    // };
+
+
+</script>
+</body>
+</html>

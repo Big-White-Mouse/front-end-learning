@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            transition: .5s;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="文本框内容" id="btn"/><br>
+<input type="button" value="box形状" id="btn1"/><br>
+<input type="text" value="这是文本框" id="txt" />
+<div id="box"></div>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    //.html()方法,设置标签中间显示其他标签及内容,类似于innerHTML
+    //.html();小括号中可以直接写标签的字符串内容,就是设置对象中的元素内容
+    //.html();小括号中什么也没有,表示的时候获取对象中的元素内容
+
+
+    //.text()方法,设置标签中间显示的文本内容,类似于innerText
+    //.text();如果小括号中写内容,就是设置文字内容
+    //如果.text();小括号什么也不写,表示的是获取这个元素中的文字内容
+    //$("#dv").text("这是一个div");//设置
+    //console.log($("#dv").text());//获取
+
+    //.val()方法.设置input标签中value的值,类似于value
+    $("#btn").click(function(){
+        $("#txt").val("改变后的文本框");//.val方法小括号写内容就是设置元素value
+        console.log($("#txt").val());//小括号什么也不写就是获取元素的value值
+    });
+
+    //.css()方法,.设置元素的样式,类似于style
+    $("#btn1").click(function(){
+        $("#box").css("width","300px");//键值对方式  前一个参数是样式名称  后一个参数是样式的值
+    });
+</script>
+</body>
+</html>
