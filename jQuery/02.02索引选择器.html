@@ -37,11 +37,11 @@
 <script src="jquery-3.4.1.js"></script>
 <script>
     $("#btn").click(function () {
-        //获取ul中的索引为4的li标签元素 从0开始  所以效果是第5个
-        // $("#ul>li:eq(4)").css("backgroundColor","red");
+        // 获取ul中的索引为4的li标签元素 从0开始  所以效果是第5个
+        $("#ul>li:eq(4)").css("backgroundColor","red");
         // 获取ul中的索引大于4(不包含4)的所有的li标签元素
-        // $("#ul>li:gt(4)").css("backgroundColor","red");
-        //获取ul中的索引小于4(不包含4)的所有的li标签元素
+        $("#ul>li:gt(4)").css("backgroundColor","red");
+        // 获取ul中的索引小于4(不包含4)的所有的li标签元素
         $("#ul>li:lt(4)").css("backgroundColor","red");
     });
 </script>

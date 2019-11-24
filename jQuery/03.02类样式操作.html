@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+        .cls{
+            background-color: green;
+        }
+        .cls2{
+            border: 3px solid yellow;
+        }
+        .bgc{
+            background-color: #000;
+        }
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            //点击第一个按钮为div添加类样式
+            $("#btn1").click(function () {
+                $("#dv").addClass("cls cls2");//addClass方法中的类样式的名字前没有点(.)；添加多个类样式的时候名字中间用空格隔开
+            });
+            //移除类样式
+            $("#btn2").click(function(){
+               $("#dv").removeClass("cls");//移除类样式，removeClass方法中什么也不写移除当前元素所有的类样式
+            });
+            //点击第二个按钮查询这个div是否应用了cls类样式
+            $("#btn3").click(function () {
+                let result=$("#dv").hasClass("cls");
+                console.log(result);
+            });
+            $("#btn4").click(function(){
+                $("body").toggleClass("bgc");//切换类样式 有就去掉 没有就加上
+            })
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="添加类样式" id="btn1"/>
+<input type="button" value="移除类样式" id="btn2"/>
+<input type="button" value="检测元素是否应用了类样式" id="btn3"/>
+<input type="button" value="开关灯" id="btn4"/>
+<div id="dv"></div>
+</body>
+</html>

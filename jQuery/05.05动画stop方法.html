@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container div{
+            width: 100px;
+            height: 100px;
+            display: none;
+            position: absolute;
+            top: 10px;
+        }
+        #box1{
+            background-color: pink;
+            left: 10px;
+        }
+        #box2{
+            background-color: lightpink;
+            left: 120px;
+        }
+        #box3{
+            background-color: hotpink;
+            left: 230px;
+        }
+        #box4{
+            background-color: deeppink;
+            left: 340px;
+        }
+        #button{
+            position: absolute;
+            left: 10px;
+            top: 120px;
+        }
+        #button input{
+            width: 105px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="box1">1</div>
+    <div id="box2">2</div>
+    <div id="box3">3</div>
+    <div id="box4">4</div>
+</div>
+<div id="button">
+    <input type="button" value="box1" id="btn1">
+    <input type="button" value="box2" id="btn2">
+    <input type="button" value="box3" id="btn3">
+    <input type="button" value="box4" id="btn4">
+</div>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    //top()方法的语法结构为：stop([clearQueue],[gotoEnd]);
+    //参数clearQueue和gotoEnd都是可选参数，为Boolean值（true或false）。
+    //clearQueue代表是否清空未执行完的动画队列，gotoEnd代表是否直接将正在执行的动画跳转到末状态。
+    //直接使用使用stop()方法，则会立即停止当前正在进行的动画，如果接下来还有动画等待继续进行，则以当前状态开始接下来的动画。
+$("#btn1,#btn2,#btn3,#btn4").mouseover(function(){
+    $("#"+this.value+"").stop(true,false).show(200);
+}).mouseout(function(){
+    $("#"+this.value+"").stop(true,false).hide(200);
+});
+</script>
+</body>
+</html>
