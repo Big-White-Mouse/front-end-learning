@@ -18,6 +18,7 @@
 <body>
 <input type="button" value="改变效果" id="btn">
 <input type="button" value="点我" id="btn1">
+<input type="button" value="过来" id="btn2">
 <div id="box"></div>
 <script src="jquery-3.4.1.js"></script>
 <script>
@@ -27,13 +28,26 @@
         //用链式编程将两行代码转换成一行代码
         $("#box").html("<p>+p</p>").css("backgroundColor","red");//.html返回值是当前
         //用法： 对象.方法().方法().方法();
-    })
+    });
     $("#btn1").click(function(){
         $(this).val("疼");
     }).mouseover(function(){
         $(this).css({"width":"100px","height":"50px"});
     }).mouseout(function(){
         $(this).css({"width":"80px","height":"30px","backgroundColor":"skyblue"});
+    });
+
+    //bind方法      不推荐  使用on方法代替
+    $("#btn2").bind({
+        "click":function(){
+            $(this).val("疼");
+        },
+        "mouseover":function(){
+            $(this).val("点我");
+        },
+        "mouseout":function(){
+            $(this).val("再见");
+        }
     });
 </script>
 </body>

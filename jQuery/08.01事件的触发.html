@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="第一个按钮" id="btn1"/>
+<input type="button" value="第二个按钮" id="btn2"/>
+<script src="jquery-3.4.1.js"></script>
+<br><br>
+<input type="button" value="触发事件" id="btn3"/>
+<input type="text" value="" id="txt"/>
+<span id="sp"></span>
+<script>
+    $("#btn1").click(function () {
+        $(this).css("backgroundColor","red");
+    });
+    //点击第二个按钮调用第一个按钮的点击事件---触发第一个按钮的点击事件
+    $("#btn2").click(function () {
+        //触发事件--3三种方式
+        //$("#btn1").click();
+        //trigger()方法中需要写上触发事件的名字
+        $("#btn1").trigger("click");//触发事件
+        ///$("#btn1").triggerHandler("click");//触发事件
+    });
+    $("#btn3").click(function () {
+        //触发文本框的获取焦点的事件  三种
+        $("#txt").focus();
+        //$("#txt").trigger("focus");
+        //$("#txt").triggerHandler("focus");
+        $("#sp").text("文本框获取到焦点了");
+        //第一种触发事件的方式和第二种触发事件的方式是相同的,都会触发浏览器默认的事件(光标在文本框中闪烁)
+        //第三种触发事件的方式不会触发浏览器的默认事件
+    });
+</script>
+</body>
+</html>

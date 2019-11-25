@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加元素" id="btn">
+<input type="button" value="为box子元素添加事件" id="btn2">
+<div id="box">
+    <span id="span1">span1</span>
+</div>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    /*
+    *on方法： 两个参数:1事件的名字,2事件处理函数
+    *on是父级元素调用,目的:为子级元素去绑定事件
+    *on方法:三个参数: 1,事件的名字, 2.要绑定事件的元素--p,3事件处理函数
+    * */
+    $("#btn").on("click",function(){
+        $("#box").append($("<span>span2</span>"));
+    });
+    $("#btn2").on("click",function(){
+       $("#box").on("click","span",function(){
+           $("span").css("backgroundColor","orange");
+           $("#span1").text("!!!");
+       })
+    });
+</script>
+<script>
+    /*   总结
+        *
+        * 绑定事件:
+        * bind:
+        * 绑定多个事件
+        * 参数:{"事件的类型":事件处理函数,....}
+        * delegate
+        * 参数:父级元素.delegate("子级元素","事件类型",事件处理函数)
+        * on
+        * 参数:父级元素.on("事件类型","子级元素",事件处理函数);
+        *
+        *
+        * */
+</script>
+</body>
+</html>

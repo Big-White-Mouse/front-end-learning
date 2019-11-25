@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="按钮" id="btn">
+</div>
+<script src="jquery-3.4.1.js"></script>
+<script>
+    $("#box").on("click","input",function(event){
+        console.log(event);
+        //event.delegateTarget----->div--->谁调用的on方法代替元素绑定的事件--div
+        //event.currentTarget----->input--->真正是谁绑定了事件
+        //event.target---->input----触发的事件
+    });
+</script>
+</body>
+</html>
