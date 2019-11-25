@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            //点击按钮,在div中添加一个超链接,设置超链接的title属性和热点文字,地址
+            $("#btn").click(function () {
+                //获取div,创建超链接
+                let aObj=$("<a></a>");
+                //attr();写两个参数:键值对(键：值)
+                //attr();只写了一个参数,获取该元素的这个属性的值
+                aObj.attr("title","123456");
+                aObj.attr("href","http://www.baidu.com");
+                aObj.text("百度");
+                $("#dv").append(aObj);
+                console.log(aObj.attr("href"));
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="设置超链接" id="btn"/>
+<div id="dv"></div>
+</body>
+</html>

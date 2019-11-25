@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="清空元素" id="btn"/>
+<input type="button" value="移除自身" id="btn2"/>
+<input type="button" value="克隆元素" id="btn3"/>
+<div id="box">
+    <span>span</span>
+</div>
+<div id="box2">
+
+</div>
+
+<script src="jquery-3.4.1.js"></script>
+<script>
+    $("#btn").click(function () {
+        //$("#box").html("");//清空元素中的内容(实际是用空字符串替换了原有内容)
+        $("#box").empty();//清空元素中的内容
+    });
+    $("#btn2").click(function () {
+        $("#box").remove();//移除元素自身
+    });
+    $("#btn3").click(function(){
+        let obj2 = $("#box>span").clone();//克隆元素
+        $("#box2").append(obj2);
+    });
+</script>
+</body>
+</html>

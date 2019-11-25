@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{
+            display: block;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<input type="button" value="插入元素" id="btn">
+<script src="jquery-3.4.1.js"></script>
+<script>
+    $("#btn").click(function(){
+        let span = $("<span>span</span>");//创建元素
+        // $("#ul").append(span);//在ul里面的最后一个li里面添加了span
+            //另一种添加元素的方式
+            //span.appendTo($("#ul"));//appendTo 把span添加到#ul中
+            //第三种创建并且添加元素的方式
+            //$("#ul").html("<span>span</span>");//但是会替换掉ul中原有的元素
+        // $("#ul").prepend(span);//在ul里面的前面添加了span
+        // $("#ul").after(span);//在ul外面的后面添加了span
+        // $("#ul").before(span);//在ul外面的前面添加了span
+    });
+</script>
+</body>
+</html>
