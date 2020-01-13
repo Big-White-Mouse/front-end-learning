@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="../../images/q.bmp">
+	<button id="full">全屏显示</button>
+	<button id="canclefull">取消全屏</button>
+	<button id="isfull">是否全屏</button>
+	<script>
+		//全屏显示可以显示任意元素
+		//H5 API ie9及部分高版本浏览器存在兼容性问题
+		//不同浏览器需要添加不同的前缀 webkit moz o ms
+		var img = document.getElementsByTagName("img");
+		document.getElementById("full").onclick = function(){
+			img.requestFullScreen();
+		}
+	</script>
+</body>
+</html>

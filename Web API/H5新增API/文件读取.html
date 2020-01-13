@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="file" name="" id="" multiple>
+
+<img src="" alt="" width="100">
+<script>
+//把上传的文件内容显示到页面或者上传完的图片缩略图显示出来
+//1.上传文件   文件域   input:file   添加mutiple以支持文件多选
+var file = document.querySelector('input');
+var img = document.querySelector('img');
+file.onchange = function(){
+	//console.log(this);//其中有一个files对象 该对象是我们上传文件的集合
+	console.log(file.files);
+	
+	//2.选择我们要的文件进行读取 filreader
+	//通过File reader H5新增的内建对象
+
+	//初始化对象
+	var reader = new FileReader();
+
+	//读取文件对象里第1个文件
+	// reader.readAsText(this.files[0]); // 读取文字文件
+	reader.readAsDataURL(this.files[0]);   //读取资源文件(图片)
+	
+	//当文件读取完毕后，会把内容存放到result里
+	//3.把读取的内容显示到界面上
+	// reader 已经读取完毕
+	reader.onload = function(){
+		console.log(reader.result);
+		//生成缩略图 把文件的内容赋值给图片的src
+		img.src = reader.result;
+	}
+}
+//其余用法请查阅FileReader文档
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	div{
+		margin: auto auto;
+		width: 200px;
+		height: 50px;
+		background-color: #000;
+		color: #fff;
+		text-align: center;
+		line-height: 50px;
+		font-size: 24px;
+		display: none;
+	}
+</style>
+<body>
+	<div class="tips"></div>
+	<script src="../../jQuery/jquery-3.4.1.js"></script>
+	<script>
+		//原始检测网络连接状态，返回一个布尔值，不同浏览器存在差异
+		//console.log(window.navigator.onLine);
+
+		//HTML5提供的两个事件
+		//online 网络连接时被调用
+		//offline 网络断开时被调用
+
+		window.addEventListener('online',function(){
+			$(".tips").text('网络已连接').fadeIn(200).delay(1000).fadeOut(200);
+		})
+		window.addEventListener('offline',function(){
+			$(".tips").text('网络已断开').fadeIn(200).delay(1000).fadeOut(200);
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	header,footer,nav{
+		height: 100px;
+		width: 100px;
+		background-color: pink;
+		display: block;
+	}
+</style>
+<!-- 通过引入js包解决ie9以下不支持html5标签的问题 -->
+
+<!-- 但是这个引入只需对ie9起作用 所以使用条件注释 -->
+<script>
+/*
+	<!--[if !IE]> 除IE外都可识别 <![endif]-->
+	<!--[if IE]> 所有的IE可识别 <![endif]-->
+	<!--[if IE 6]> 仅IE6可识别 <![endif]-->
+	<!--[if lte IE 6]> IE6以及IE6以下版本可识别 <![endif]-->
+	<!--[if gte IE 6]> IE6以及IE6以上版本可识别 <![endif]-->
+	<!--[if IE 7]> 仅IE7可识别 <![endif]-->
+	<!--[if lt IE 7]> IE7以下版本可识别 <![endif]-->
+	<!--[if gt IE 7]> IE7以上版本可识别 <![endif]-->
+	<!--[if IE 8]> 仅IE8可识别 <![endif]-->
+	<!--[if IE 9]> 仅IE9可识别 <![endif]-->
+*/
+</script>	
+<!-- [if lte IE8]><script src="html5shiv.min.js"></script><![endif]-->
+<body>
+	<nav>123</nav>
+	<header>abc</header>
+	<footer>def</footer>
+</body>
+</html>
