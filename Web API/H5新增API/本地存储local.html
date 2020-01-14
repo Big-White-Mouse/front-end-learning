@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="" id="username">
+<input type="button" id="setData" value="设置数据">
+<input type="button" id="getData" value="获取数据">
+<input type="button" id="delData" value="删除数据">
+<input type="button" id="delAllData" value="删除所有数据">
+
+<a href="http://www.baidu.com">bd</a>
+<script>
+    let username = document.querySelector("#username");
+    //点击按钮存储数据
+    document.querySelector("#setData").onclick = function(){
+        let val = username.value;
+        //存储数据
+        window.localStorage.setItem('username',val);
+    };
+    document.querySelector("#getData").onclick = function(){
+        //获取数据
+        console.log(window.localStorage.getItem('username'));
+    };
+    document.querySelector("#delData").onclick = function(){
+        //删除数据
+        window.localStorage.removeItem('username');
+    };
+    document.querySelector("#delAllData").onclick = function(){
+        //删除所有数据
+        window.localStorage.clear();
+    };
+</script>
+<script>
+    /*
+    * H5的本地存储
+    * 1.sessionStroage约5M
+    *   浏览器（或页面）关闭 生命周期结束
+    *   同一个窗口（页面）下共享
+    * 2.localStorge约20M
+    *   永久生效 除非手动删除数据
+    *   多窗口（页面）下共享
+    * */
+</script>
+</body>
+</html>

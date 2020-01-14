@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 160px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 10px;
+        float: left;
+    }
+    p{
+        margin: 0;
+        background-color: pink;
+        border-bottom: 1px solid #ffffff;
+        line-height: 24px;
+        text-align: center;
+    }
+</style>
+<body>
+<div id="d1">
+    <p id="p1" draggable="true">拖拽内容1</p>
+    <p id="p2" draggable="true">拖拽内容2</p>
+    <p id="p3" draggable="true">拖拽内容3</p>
+    <p id="p4" draggable="true">拖拽内容4</p>
+    <p id="p5" draggable="true">拖拽内容5</p>
+    <p id="p6" draggable="true">拖拽内容6</p>
+</div>
+<div id="d2"></div>
+<div id="d3"></div>
+<script>
+    //防止代码重复使用事件委托
+    // let d = null;
+
+    //let obj = null;//用于存放事件对象的全局变量
+    //实际上有datatransfor用来帮我们保存拖拽的数据
+    //详情请查询文档
+
+
+    document.ondragstart = function(e){
+
+        //e.target 事件对象里面的事件目标
+        //obj = e.target;
+
+        //当我们开始拖拽的时候开始存放数据  此处使用id作为传输对象
+        e.dataTransfer.setData("text/html",e.target.id);
+
+    };
+    document.ondragover = function(){
+        return false;
+    };
+    document.ondrop = function(e){
+        // e.target.appendChild(obj);
+        //拖拽时原有对象会自动删除
+
+        let id = e.dataTransfer.getData("text/html");
+        //最后通过id获取元素  再追加到目标元素中
+        e.target.appendChild(document.getElementById(id));
+    };
+
+</script>
+</body>
+</html>

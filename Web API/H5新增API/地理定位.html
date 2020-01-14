@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p id="demo"></p>
+<input type="button" value="点击获取地理位置">
+<script>
+    //在谷歌浏览器里用的是谷歌地图，，国内无法使用
+
+let btn = document.getElementsByTagName('input');
+let p = document.getElementById('demo');
+btn.onclick = function(){
+    console.log(1);
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition,showError);
+    } else {
+        p.innerHTML = "此浏览器不支持地理位置获取";
+    }
+};
+function showPosition(position){
+    p.innerHTML = "维度 " + position.coords.latitude + "<br/>经度 " + position.coords.longitude;
+    //还有更多数据   请查询手册
+    /*
+    * 位置精度
+    * 海拔
+    * 海拔精度
+    * 方向（从正北开始以度计）
+    * 速度（米/秒）
+    * 效应的日期/时间
+    * */
+}
+function showError(error){
+    switch(error.code){
+        case error.PERMISSION_DENIED:
+            p.innerHTML = "用户取消了定位请求";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            p.innerHTML = "位置信息不可用";
+            break;
+        case error.TIMEOUT:
+            p.innerHTML = "请求超时";
+            break;
+        case error.UNKNOWN_ERR:
+            p.innerHTML = "发生未知错误";
+            break;
+    }
+}
+</script>
+</body>
+</html>

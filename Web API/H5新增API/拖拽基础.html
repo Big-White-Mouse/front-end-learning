@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        margin: 10px;
+    }
+</style>
+<body>
+<div id="d1">
+    <p id="p" draggable="true">拖拽内容</p>
+</div>
+<div id="d2"></div>
+<div id="d3"></div>
+<script>
+//H5中拖拽是一个标准  任何元素都可以拖拽
+//完整的拖拽包括：拖拽 drag + 释放 drop
+//给元素设置可拖拽属性 draggable="true"
+let p = document.getElementById('p');
+let d2 = document.getElementById('d2');
+//被拖动的源对象可以触发的事件
+    //1.ondragstart：开始被拖动
+    p.ondragstart = function(){
+        console.log("开始拖动");
+    };
+    //2.ondrag：被拖动的过程中
+    p.ondrag = function(){
+        console.log("正在拖动");
+    };
+    //3.ondragend：拖动结束
+    p.ondragend = function(){
+        console.log("拖动结束");
+    };
+//目标对象可以触发的事件
+    //1.ondragenter：源对象进入目标对象
+    d2.ondragenter = function(){
+        console.log("目标进入");
+    };
+    //2.ondragover：源对象悬停在目标对象上方
+    d2.ondragover = function(){
+        console.log("目标悬停");
+
+        //如果想触发ondrop事件 则需要在over里面阻止默认行为
+        return false;
+    };
+    //3.ondragleave：源对象拖动着离开目标对象
+    d2.ondragleave = function(){
+        console.log("目标离开");
+    };
+    //4.ondrop：源对象在目标对象上面释放
+    d2.ondrop = function(){
+        console.log("目标释放");
+    };
+
+</script>
+</body>
+</html>
