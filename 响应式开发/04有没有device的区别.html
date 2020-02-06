@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*min-width 可视区宽度 在pc端和移动端都能正常响应 效果一致
+
+          min-device-width屏幕宽度 pc端不会响应  浏览器模拟的是设备的屏幕宽度  所以可以响应
+        */
+        body{
+            background-color: red;
+        }
+        @media screen and (min-device-width: 600px){
+            body{
+                background-color: green;
+            }
+        }
+        @media screen and (min-device-width: 1000px){
+            body{
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>

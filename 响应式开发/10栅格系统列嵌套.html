@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <style>
+        .row > div{
+            height: 100px;
+            background-color: pink;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        .row > div > .row{
+            height: 100%;
+        }
+        .row > div > .row > div{
+            height: 100%;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4"></div>
+            </div>
+        </div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-1"></div>
+    </div>
+</div>
+<script src="../jQuery/jquery-3.4.1.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

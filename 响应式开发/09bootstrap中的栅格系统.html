@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <style>
+        /*.container-fluid{*/
+        /*    background-color: blue;*/
+        /*}*/
+
+        .container{
+            background-color: hotpink;
+            /*height: 100px;*/
+        }
+        .row{
+            /*height: 100px ;*/
+        }
+        .container > .row > div{
+            height: 100px;
+            background-color: pink;
+            border-left: 1px solid red;
+            border-bottom: 1px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<!--填满整个行的容器-->
+<!--<div class="container-fluid"></div>-->
+<!--
+栅格命名规则：
+
+w>1200        lg
+992<w<1200    md
+768<w<992     sm
+w<768         xs
+
+col-xs-4:设置当前div在xs屏幕下占据当前屏幕12等份中的4份
+-->
+<!-- .container两边有间距的容器-->
+
+<!--需求：
+w<768  12等份
+768<w<992 6等份
+992<w<1200 4等份
+1200<w 3等份
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"></div>
+    </div>
+</div>
+
+
+<script src="../jQuery/jquery-3.4.1.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

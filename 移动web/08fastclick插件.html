@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<script src="fastclick.js"></script>
+<script>
+    /*
+    *需求：
+    * 1.在pc端和移动端都能响应----click
+    * 2.不能有点透(自行百度)产生----click
+    * 3.操作不能有延迟----touch
+    * */
+
+    let box1 = document.getElementById('box1');
+    let box2 = document.getElementById('box2');
+    if('addEventListener' in document){
+        document.addEventListener('DOMContentLoaded',function(){
+            // FastClick.attach(document.body);
+            FastClick.attach(box1);
+            FastClick.attach(box2);
+            //参数可以是任意dom元素，如果写document.body，则将body下面所有的元素都绑定fastclick
+        },false);
+    }
+    box1.addEventListener('click',function(){
+        console.log(1);
+    });
+    box2.addEventListener('click',function(){
+        this.style.visibility="hidden";
+        console.log(2);
+    });
+
+</script>
+</body>
+</html>

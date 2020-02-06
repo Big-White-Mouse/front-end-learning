@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="zepto.js"></script>
+<script src="zeptotouch.js"></script>
+<script>
+    /*
+    * 单击操作的特点
+    * 1. 只有一根手指
+    * 2. 判断手指开始触摸和松开的时间差不能大于指定的值(150ms-300ms)
+    * 3. 保证没有滑动操作，但是如果有抖动必须保证抖动 的距离在指定的范围内
+    *
+    * 我们一般使用zepto封装好的tap事件
+    * */
+
+    //给div绑定tap事件
+    //zepto原始文件中不包含tap事件，需要再引用touch.js文件
+    console.log(0);
+    let box = document.getElementById('box');
+    $(box).on("tap",function(e){
+        console.log(1);
+    });
+</script>
+</body>
+</html>

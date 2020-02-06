@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 后来的条件会覆盖之前的条件 */
+        /*
+        所有css框架遵循的原则：
+        向上兼容
+        向下覆盖
+
+        bootstrap就是判断最小值，从小到大写
+        */
+
+        body{
+            background-color: red;
+        }
+        @media screen and (min-width: 768px){
+            body{
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            body{
+                background-color: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>

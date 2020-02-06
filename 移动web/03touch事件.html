@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #box1{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+<script>
+    //touch 事件只能在移动端触发
+    let div = document.getElementById('box');
+
+    /*添加开始触摸事件：当手指触摸到屏幕时触发*/
+    div.addEventListener("touchstart",function(){
+        console.log("touchstart");
+    });
+    /*添加手指滑动事件，当手指在屏幕上滑动时触发:move事件是持续触发*/
+    div.addEventListener("touchmove",function(){
+        console.log("touchmove");
+    });
+    /*添加触摸结束事件：当手指离开屏幕时触发*/
+    div.addEventListener("touchend",function(){
+        console.log("touchend");
+    });
+    /*添加触摸意外中断事件*/
+    div.addEventListener("touchcancel",function(){
+    });
+
+    let box1 = document.getElementById('box1');
+    box1.ontouchstart = function(e){
+        console.log(e);
+        //e中有三个对象
+        //1. touches: 所有的手指对象
+        //2. targetTouches: 当前元素上面的手指对象 ，touches和targetTouches在测试中几乎没有区别
+        //3. changedTouches: 当前屏幕上变化的手指对象(从有到无或从无到有)
+
+        //touch对象里有
+        //pageX/Y 相对于整个页面
+        //clientX/Y 相对于视口(可见区域)
+        //screenX/Y 相对于屏幕
+    };
+</script>
+</body>
+</html>

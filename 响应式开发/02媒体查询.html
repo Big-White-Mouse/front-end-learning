@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        /* 添加媒体查询*/
+
+        /*宽度小于768 max-width说明当前屏幕最大值为768px*/
+        @media screen and (max-width: 768px){
+            body{
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+        @media screen and (min-width: 992px) and (max-width: 1200px){
+            body{
+                background-color: pink;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            body{
+                background-color: purple;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    //媒体查询  设置不同屏幕宽度下的样式
+    //通过查询screen的宽度来指定某个宽度区间的网页布局
+    //通常我们这样区分屏幕大小(非强制)
+    //超小屏幕  w<768px
+    //小屏     768< w <992
+    //中屏     992< w <1200
+    //宽屏     1200< w
+
+    //不同屏幕宽度下设置不同的背景色
+</script>
+</body>
+</html>

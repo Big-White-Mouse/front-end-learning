@@ -1,0 +1,52 @@
+/*这种注释会被编译*/
+//这种注释不会被编译
+
+//变量  @变量名: 值;
+@color: #eeeeee;
+div{
+  color:@color;
+}
+
+//混入：将一个定义好的样式引入到另一个样式中
+//参数@r 默认值10px
+.addRadius(@r:10px){
+  border-radius: @r;
+  -webkit-border-radius: @r;
+  -moz-border-radius: @r;
+}
+nav{
+  width: 100px;
+  height: 200px;
+  //引入已经写好的圆角样式 并且传入参数
+  .addRadius(30px);
+}
+//嵌套： 实现选择器的继承，减少代码量使结构清晰
+
+//.jd > div{}
+//.jd{}
+//.jd > div::before{}
+//.jd > div h3{}
+//.jd > div > a{}
+//.jd > div > a:hover{}
+
+//less语法：
+.jd{
+  width: 100%;
+  height: 200px;
+  .addRadius(20px);
+  > div{
+    width: 100%;
+    &::before{
+      content:"";
+    }
+    > a{
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    h3{
+      height: 20px;
+    }
+  }
+}
